@@ -7,6 +7,18 @@ Designed with ease-of-use in mind, this app lets you install, update, and remove
 
 ---
 
+## Donations
+
+If you find this tool helpful, consider supporting development:
+
+- **Bitcoin (BTC):** `bc1ql8c04fwcz8fxmqzcr3mnaarn0auajw7jswy6hq`
+- **Ethereum (ETH):** `0xdc0c587e811330C11e3E80caaB1961FA85Cadd81`
+- **Litecoin (LTC):** `ltc1q5mme730eyw9lrsjfclwafmvz76tv0n3vn5h6xn.`
+- **Ethereum (ETH) on Base:** `0xdc0c587e811330C11e3E80caaB1961FA85Cadd81`
+- **XRP:** `rUyRSXTFNfC8mHtxNMA2MRy7MPWHf5gSWm`
+
+If you like my work and want to keep me motivated send a buck or two! Anything helps.
+
 ## 🎯 Features
 
 ✅ Intuitive graphical interface (with tabs)  
