@@ -1,5 +1,5 @@
 """
-EZWowAddon – v2
+EZWowAddon – v1.0.0
 Light‑weight addon manager for Turtle WoW (1.12 client)
 Author:  Jamal Al-Sarraf
 
