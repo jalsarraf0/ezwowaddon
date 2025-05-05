@@ -34,7 +34,7 @@ All notable changes to **EZWowAddon** will be documented in this file.
 
 ---
 
-## [v0.5.0] – 2025-05-01
+## [v0.5.0] – 2025-04-29
 
 ### Initial Release
 
