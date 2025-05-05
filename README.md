@@ -23,57 +23,55 @@ If you like my work and want to keep me motivated, send a buck or two — anythi
 
 ## 🎯 Features
 
-✅ Intuitive graphical interface (tabbed layout)  
+✅ Beginner-friendly graphical interface with tabs  
 ✅ One-click install of popular addons like **pfQuest**  
 ✅ Paste any GitHub repo URL to install custom addons  
 ✅ Auto-detect and remember your Turtle WoW `AddOns` folder  
-✅ Update or reinstall mods directly from GitHub  
-✅ Clean uninstall of addons  
-✅ Beginner-proof: No ZIP handling, no manual file placement  
-✅ Can be compiled into a portable `.exe` for offline use  
+✅ Detects already-installed addons and updates button labels  
+✅ View and cleanly uninstall installed addons  
+✅ Fully self-contained executable for Windows (.exe)
 
 ---
 
 ## 🧩 Download
 
-### 🔻 Option 1: Download `.exe` (Recommended for most users)
+### 🪟 Option 1: Use the `.exe` (Recommended for most users)
 
-Visit the [Releases page](https://github.com/jalsarraf0/ezwowaddon/releases) and grab the latest version:
+> Go to the [Releases page](https://github.com/jalsarraf0/ezwowaddon/releases) and download the latest version.
 
-1. Run the `.exe`
-2. Select your Turtle WoW `AddOns` folder
-3. Click to install pfQuest or paste a GitHub link
+1. Run the `.exe` file
+2. Select your Turtle WoW AddOns folder
+3. Click to install a recommended addon or paste a GitHub URL
 4. Done!
-
-No setup, no ZIP files, no terminal required.
 
 ---
 
-### 🧠 Option 2: Run from Source (For Developers)
+### 🐧 Option 2: Run from Python (Developers or Linux/macOS users)
 
-1. Ensure **Python 3.11+** is installed
-2. Clone or download this repository
-3. From the terminal:
-
-```bash
-pip install requests
-python ezwow.py
-```
-
-You’re now running it from source.
+1. Install Python 3.11+ and `requests`
+2. Clone this repo:
+   ```bash
+   git clone https://github.com/jalsarraf0/ezwowaddon.git
+   cd ezwowaddon
+   pip install requests
+   python ezwow.py
+   ```
 
 ---
 
 ## 📦 Built-In Recommended Addons
 
-| Addon Name        | Description                             | GitHub Link                                        |
-|------------------|-----------------------------------------|---------------------------------------------------|
-| pfQuest           | Quest helper with in-game markers       | [pfQuest](https://github.com/shagu/pfQuest)       |
-| pfQuest-Turtle    | Turtle WoW-specific quest data          | [pfQuest-Turtle](https://github.com/shagu/pfQuest-turtle) |
-| BigWigs           | Boss warnings and timers                | [BigWigs](https://github.com/CosminPOP/BigWigs)   |
-| LunaUnitFrames    | Customizable unit frame replacement     | [LunaUnitFrames](https://github.com/Aviana/LunaUnitFrames) |
-| ShaguTweaks       | Quality of life enhancements            | [ShaguTweaks](https://github.com/shagu/ShaguTweaks) |
-| AtlasLootClassic  | Loot browser and dungeon drops          | [AtlasLootClassic](https://github.com/AtlasLoot/AtlasLootClassic) |
+| Addon Name      | Description                            | GitHub Link                                                   |
+|-----------------|----------------------------------------|----------------------------------------------------------------|
+| pfQuest          | Quest helper with in-game markers      | [shagu/pfQuest](https://github.com/shagu/pfQuest)             |
+| pfQuest-Turtle   | Turtle WoW-specific quest data         | [shagu/pfQuest-turtle](https://github.com/shagu/pfQuest-turtle) |
+| BigWigs          | Boss warnings and timers               | [CosminPOP/BigWigs](https://github.com/CosminPOP/BigWigs)     |
+| ShaguTweaks      | QoL enhancements for 1.12              | [shagu/ShaguTweaks](https://github.com/shagu/ShaguTweaks)     |
+| Auctionator      | Simple auction house UI improvements   | [nimeral/AuctionatorVanilla](https://github.com/nimeral/AuctionatorVanilla) |
+| Aux              | Advanced AH addon for Vanilla          | [gwetchen/aux-addon](https://github.com/gwetchen/aux-addon)   |
+
+> 🆕 **Auctionator** and **Aux** were added in version 1.0.0.  
+> ❌ **AtlasLootClassic** and **LunaUnitFrames** were removed for a more focused user experience.
 
 ---
 
@@ -82,12 +80,12 @@ You’re now running it from source.
 **Q: Can I use this with Retail or Classic WoW?**  
 🛑 No. This tool is made specifically for [Turtle WoW](https://turtle-wow.org/).
 
-**Q: Where is my `AddOns` folder?**  
-Usually located at:  
+**Q: Where is my AddOns folder?**  
+Default Windows path:  
 `C:\Games\Turtle WoW\_classic_\Interface\AddOns`
 
 **Q: Is this safe?**  
-✅ Yes. It only downloads open-source addons from GitHub and puts them in your AddOns folder.
+✅ Yes. It installs open-source addons directly from GitHub. No external binaries.
 
 ---
 
@@ -95,26 +93,25 @@ Usually located at:
 
 - Language: Python 3.11+
 - GUI: Tkinter
-- Build Tool: PyInstaller
-- Platform: Windows (compiled `.exe`) or cross-platform (via Python)
+- Packaging: PyInstaller
 - License: MIT
+- Platform: Windows/Linux/macOS
 
 To build the executable:
 
 ```bash
-python -m PyInstaller --noconfirm --onefile --windowed ezwow.py
+pip install requests
+pyinstaller --noconfirm --onefile --windowed ezwow.py
 ```
 
 ---
 
 ## 🤝 Contributing
 
-Pull requests and feedback are always welcome!
+Pull requests and feedback are welcome!
 
-- Want to suggest more built-in addons?  
-- Want to contribute UI improvements or threading?
-
-Open an issue or PR!
+Have a suggested addon or want to improve the interface?  
+Open a GitHub issue or submit a PR!
 
 ---
 
