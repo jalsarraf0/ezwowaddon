@@ -4,6 +4,22 @@ All notable changes to **EZWowAddon** will be documented in this file.
 
 ---
 
+## [v1.0.7] – 2025-06-05
+
+### 🚀 Packaging
+
+- CI workflow now automatically builds and publishes one‑file executables for Windows, Linux, and macOS.
+- CI: drop coverage.xml from artifact uploads to avoid missing-file failures
+
+## [v1.0.6] – 2025-06-05
+
+### ✨ Added / 🔧 Changed
+
+- Background installs with progress bar.
+- Improved folder detection logic.
+- Added "Install All" button in the Recommended AddOns tab.
+- Integrated CI binary builds into the GitHub Actions workflow.
+
 ## [v1.0.5] – 2025-05-04
 
 ### ✨ Changed
