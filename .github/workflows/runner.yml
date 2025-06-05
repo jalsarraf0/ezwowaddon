@@ -150,3 +150,14 @@ jobs:
         files: |
           dist/**/*
           build/**/*
+
+    - name: Commit dist/ + build/ back to the repo
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: GitHub Actions
+        author_email: github-actions[bot]@users.noreply.github.com
+        message: chore: update prebuilt binaries for ${{ github.ref }}
+        add: |
+          dist/** build/**
+        branch: main
