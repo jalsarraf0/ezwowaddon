@@ -36,11 +36,23 @@ If you like my work and want to keep me motivated, send a buck or two — anythi
 ## 🧩 Download
 ### 🪟 Option 1: Prebuilt Binaries (Recommended)
 
-Go to the [Releases page](https://github.com/jalsarraf0/ezwowaddon/releases) and download the latest assets for your platform:
+Go to the [Releases page](https://github.com/jalsarraf0/ezwowaddon/releases) and download the latest assets for your platform, or use the command-line instructions below:
 
 - **Windows:** `ezwow.exe`
 - **Linux:** `ezwow` (make executable and run)
 - **macOS:** `ezwow` (or app bundle if available)
+
+#### Download via command-line
+
+##### Linux/macOS
+```bash
+curl -fsSL https://github.com/jalsarraf0/ezwowaddon/releases/latest/download/ezwow -o ezwow && chmod +x ezwow
+```
+
+##### Windows (PowerShell)
+```powershell
+Invoke-WebRequest -Uri https://github.com/jalsarraf0/ezwowaddon/releases/latest/download/ezwow.exe -OutFile ezwow.exe
+```
 
 1. Run the downloaded binary
 2. Select your Turtle WoW AddOns folder
