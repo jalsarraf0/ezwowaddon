@@ -1,0 +1,5 @@
+FROM ghcr.io/cross-the-world/pyinstaller-windows:python-3.11
+
+WORKDIR /app
+COPY . .
+RUN pyinstaller --noconfirm --onefile --windowed ezwow.py

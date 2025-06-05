@@ -30,6 +30,8 @@ from typing import Dict, List, Tuple
 import requests
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
+import os
+import threading
 
 # Updated recommended addons list
 RECOMMENDED_ADDONS: List[Tuple[str, str, str]] = [
@@ -83,15 +85,30 @@ def save_config(path: str) -> None:
         print(f"[WARN] Could not save config: {exc}")
 
 def find_default_addons_folder() -> pathlib.Path | None:
-    candidate = (
-        pathlib.Path.home()
-        / "Games"
-        / "Turtle WoW"
-        / "_classic_"
-        / "Interface"
-        / "AddOns"
+    # Try common installation paths on Windows, WINE (Linux), and macOS
+    candidates: List[pathlib.Path] = []
+    # Windows default path
+    candidates.append(
+        pathlib.Path.home() / "Games" / "Turtle WoW" / "_classic_" / "Interface" / "AddOns"
     )
-    return candidate if candidate.exists() else None
+    # WINE default prefix
+    candidates.append(
+        pathlib.Path.home() / ".wine" / "drive_c" / "Games" / "Turtle WoW" / "_classic_" / "Interface" / "AddOns"
+    )
+    # Custom WINEPREFIX
+    wineprefix = os.environ.get("WINEPREFIX")
+    if wineprefix:
+        candidates.append(
+            pathlib.Path(wineprefix) / "drive_c" / "Games" / "Turtle WoW" / "_classic_" / "Interface" / "AddOns"
+        )
+    # macOS app bundle location
+    candidates.append(
+        pathlib.Path.home() / "Applications" / "Turtle WoW.app" / "Contents" / "Resources" / "Data" / "Interface" / "AddOns"
+    )
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return None
 
 def download_and_extract(
     url: str, target_folder: pathlib.Path, subfolder_name: str
@@ -204,16 +221,23 @@ class AddonManagerApp(tk.Tk):
             ttk.Label(row, text=name, width=24, anchor="w").pack(side="left")
             ttk.Label(row, textvariable=status_var, width=14).pack(side="left")
 
-            ttk.Button(
+            btn = ttk.Button(
                 row,
                 textvariable=btn_var,
                 command=partial(self._install_recommended, name, url, folder),
                 width=14,
-            ).pack(side="right")
+            )
+            btn.pack(side="right")
 
-            self.reco_rows[name] = {"status": status_var, "btn": btn_var}
+            self.reco_rows[name] = {"status": status_var, "btn": btn_var, "button": btn}
 
         self._refresh_recommended_status()
+        self.install_all_btn = ttk.Button(
+            parent,
+            text="Install All Recommended",
+            command=self._install_all_recommended,
+        )
+        self.install_all_btn.pack(pady=(8, 0))
 
     def _refresh_recommended_status(self) -> None:
         for name, _, folder in RECOMMENDED_ADDONS:
@@ -228,22 +252,15 @@ class AddonManagerApp(tk.Tk):
     def _install_recommended(self, name: str, url: str, folder: str) -> None:
         if not self._ensure_folder():
             return
-        try:
-            self._update_status(f"Installing {name} …")
-            download_and_extract(url, self.addons_folder, folder)
-            messagebox.showinfo("Success", f"{name} installed successfully.")
-        except RuntimeError as exc:
-            messagebox.showerror("Error", str(exc))
-        finally:
-            self._refresh_recommended_status()
-            self._refresh_installed_list()
-            self._update_status("Ready.")
+        self._start_install_task(self._do_install_recommended, name, url, folder)
 
     def _build_custom_tab(self, parent: ttk.Frame) -> None:
         ttk.Label(parent, text="Paste a GitHub repository URL below and click Install to download the latest ZIP.", wraplength=500).pack(pady=6)
         self.url_var = tk.StringVar()
-        ttk.Entry(parent, textvariable=self.url_var, width=70).pack(padx=16)
-        ttk.Button(parent, text="Install", command=self._install_from_url).pack(pady=8)
+        self.custom_url_entry = ttk.Entry(parent, textvariable=self.url_var, width=70)
+        self.custom_url_entry.pack(padx=16)
+        self.custom_install_btn = ttk.Button(parent, text="Install", command=self._install_from_url)
+        self.custom_install_btn.pack(pady=8)
 
     def _install_from_url(self) -> None:
         if not self._ensure_folder():
@@ -255,16 +272,7 @@ class AddonManagerApp(tk.Tk):
         if not url.endswith(".zip"):
             url += "/archive/refs/heads/master.zip"
         name = url.split("/")[-3]
-        try:
-            self._update_status(f"Installing {name} …")
-            download_and_extract(url, self.addons_folder, name)
-            messagebox.showinfo("Success", f"{name} installed successfully.")
-        except RuntimeError as exc:
-            messagebox.showerror("Error", str(exc))
-        finally:
-            self._refresh_recommended_status()
-            self._refresh_installed_list()
-            self._update_status("Ready.")
+        self._start_install_task(self._do_install_from_url, name, url)
 
     def _build_manage_tab(self, parent: ttk.Frame) -> None:
         ttk.Label(parent, text="Installed AddOns:", font=("Segoe UI", 10)).pack(pady=5)
@@ -299,6 +307,49 @@ class AddonManagerApp(tk.Tk):
             except OSError as exc:
                 messagebox.showerror("Error", f"Could not delete: {exc}")
 
+    def _start_install_task(self, task_func, *args) -> None:
+        self._set_ui_enabled(False)
+        self.progress.pack(side="bottom", fill="x", padx=8)
+        self.progress.start()
+        thread = threading.Thread(target=self._thread_wrapper, args=(task_func, args), daemon=True)
+        thread.start()
+
+    def _thread_wrapper(self, task_func, args) -> None:
+        try:
+            task_func(*args)
+        except RuntimeError as exc:
+            self.after(0, lambda: messagebox.showerror("Error", str(exc)))
+        finally:
+            self.after(0, self.progress.stop)
+            self.after(0, self.progress.pack_forget)
+            self.after(0, self._refresh_recommended_status)
+            self.after(0, self._refresh_installed_list)
+            self.after(0, lambda: self._update_status("Ready."))
+            self.after(0, lambda: self._set_ui_enabled(True))
+
+    def _do_install_recommended(self, name: str, url: str, folder: str) -> None:
+        self.after(0, lambda: self._update_status(f"Installing {name} …"))
+        download_and_extract(url, self.addons_folder, folder)
+        self.after(0, lambda: messagebox.showinfo("Success", f"{name} installed successfully."))
+
+    def _do_install_from_url(self, name: str, url: str) -> None:
+        self.after(0, lambda: self._update_status(f"Installing {name} …"))
+        download_and_extract(url, self.addons_folder, name)
+        self.after(0, lambda: messagebox.showinfo("Success", f"{name} installed successfully."))
+
+    def _do_install_all(self) -> None:
+        for name, url, folder in RECOMMENDED_ADDONS:
+            self.after(0, lambda n=name: self._update_status(f"Installing {n} …"))
+            download_and_extract(url, self.addons_folder, folder)
+
+    def _set_ui_enabled(self, enabled: bool) -> None:
+        state = tk.NORMAL if enabled else tk.DISABLED
+        for row in self.reco_rows.values():
+            row["button"].configure(state=state)
+        self.custom_url_entry.configure(state=state)
+        self.custom_install_btn.configure(state=state)
+        self.install_all_btn.configure(state=state)
+
     def _ensure_folder(self) -> bool:
         if not self.addons_folder:
             messagebox.showwarning("AddOns Folder Needed", "Set your AddOns folder first.")
@@ -313,4 +364,5 @@ class AddonManagerApp(tk.Tk):
 if __name__ == "__main__":
     app = AddonManagerApp()
     ttk.Label(app, textvariable=app.status_var).pack(side="bottom", pady=4)
+    app.progress = ttk.Progressbar(app, mode="indeterminate")
     app.mainloop()

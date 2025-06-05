@@ -1,0 +1,71 @@
+name: Build and release binaries
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    name: Windows Build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install requests pyinstaller
+      - name: Build EXE
+        run: |
+          pyinstaller --noconfirm --onefile --windowed ezwow.py
+      - name: Upload Windows executable
+        uses: actions/upload-artifact@v3
+        with:
+          name: ezwow-windows-exe
+          path: dist/ezwow.exe
+
+  build-linux:
+    name: Linux Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install requests pyinstaller
+      - name: Build Executable
+        run: |
+          pyinstaller --noconfirm --onefile ezwow.py
+      - name: Upload Linux executable
+        uses: actions/upload-artifact@v3
+        with:
+          name: ezwow-linux
+          path: dist/ezwow
+
+  build-macos:
+    name: macOS Build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install requests pyinstaller
+      - name: Build Executable
+        run: |
+          pyinstaller --noconfirm --onefile ezwow.py
+      - name: Upload macOS executable
+        uses: actions/upload-artifact@v3
+        with:
+          name: ezwow-macos
+          path: dist/ezwow
