@@ -1,9 +1,7 @@
-build-windows-exe.sh
 
 # Ignore PyInstaller build artifacts
 build/
 dist/
-*.spec
 
 # Ignore Python cache files
 __pycache__/
