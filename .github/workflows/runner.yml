@@ -140,7 +140,6 @@ jobs:
         path: |
           dist/**/*        # Node / Python wheels
           build/**/*
-          coverage.xml
         retention-days: 30
 
     - name: Create GitHub Release
