@@ -157,7 +157,7 @@ jobs:
       with:
         author_name: GitHub Actions
         author_email: github-actions[bot]@users.noreply.github.com
-        message: chore: update prebuilt binaries for ${{ github.ref }}
+        message: 'chore: update prebuilt binaries for ${{ github.ref }}'
         add: |
           dist/** build/**
         branch: main
