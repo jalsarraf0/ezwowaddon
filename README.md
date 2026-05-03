@@ -1,77 +1,82 @@
 # EZWowAddon
 
-Lightweight GUI addon manager for [Turtle WoW](https://turtle-wow.org/) (1.12 client).
+World-class addon and client-mod manager for [Turtle WoW](https://turtle-wow.org/) (Vanilla 1.12 client).
 
-## Overview
-
-EZWowAddon lets you install, update, and remove World of Warcraft addons from GitHub without manually downloading ZIP files or navigating game folders. It targets Turtle WoW specifically and is not compatible with Retail or Classic WoW.
-
-The app is a single Python script backed by Tkinter. It ships as a self-contained executable for Windows and Linux via PyInstaller.
+EZWowAddon installs, updates, and removes addons from a curated catalog of 40+ community-maintained projects, plus client mods (VanillaFixes, SuperWoW, Nampower, ...). Dependency-aware, with one-click presets for common loadouts (Essential, Raider, Hardcore, Minimal UI), backup/restore, and both a modern GUI and a scriptable CLI.
 
 ## Features
 
-- Graphical interface with four tabs: Settings, Recommended Addons, Install from URL, Manage Installed
-- One-click install for six pre-configured popular addons
-- Install any addon by pasting a GitHub repository URL
-- Auto-detects your Turtle WoW AddOns folder on Windows and WINE
-- Remembers your AddOns folder between sessions
-- Shows installed/not-installed status for each recommended addon
-- Remove installed addons from the Manage tab
-- Downloads run on a background thread so the UI stays responsive
+- **Curated catalog** of 40+ addons + 6 client mods, categorised (UI, Quest, Combat, Auction, Inventory, Raid, Social, Utility).
+- **Real update detection** — tracks installed Git SHA per addon and surfaces upstream changes; one-click "Update All".
+- **Presets** — Essential, Raider, Hardcore, Minimal UI; resolves dependencies automatically.
+- **Backup / restore** — tar.gz snapshots of `Interface/AddOns/` + `WTF/` (SavedVariables); restore in one command.
+- **Modern UI** — CustomTkinter dark theme, side-nav, search, threaded installs.
+- **CLI mode** — `ezwow install`, `ezwow update --all`, `ezwow doctor` for power users and scripts.
+- **Auto-detection** — finds your AddOns folder for both classic installs (`~/Games/Turtle WoW/`) and the official Turtle launcher (`%APPDATA%/TurtleWoW/`).
+- **Custom GitHub URLs** — install any GitHub-hosted addon by id or by entering a repository URL.
 
-## Built-In Recommended Addons
+## Install
 
-| Addon | Description |
-|---|---|
-| pfQuest | Quest helper with in-game map markers |
-| pfQuest-Turtle | Turtle WoW-specific quest data for pfQuest |
-| BigWigs | Boss warnings and ability timers |
-| ShaguTweaks | Quality-of-life enhancements for 1.12 |
-| Auctionator | Simplified auction house UI |
-| Aux | Advanced auction house addon for Vanilla |
+### Pre-built binaries
 
-## Download
+Download the latest release for your platform from the [Releases page](https://github.com/jalsarraf0/ezwowaddon/releases).
 
-Go to the [Releases page](https://github.com/jalsarraf0/ezwowaddon/releases) and download the latest binary for your platform.
-
-**Linux / macOS:**
 ```bash
-curl -fsSL https://github.com/jalsarraf0/ezwowaddon/releases/latest/download/ezwow -o ezwow && chmod +x ezwow
+# Linux
+curl -fsSL https://github.com/jalsarraf0/ezwowaddon/releases/latest/download/ezwow -o ezwow
+chmod +x ezwow
 ./ezwow
 ```
 
-**Windows (PowerShell):**
 ```powershell
+# Windows
 Invoke-WebRequest -Uri https://github.com/jalsarraf0/ezwowaddon/releases/latest/download/ezwow.exe -OutFile ezwow.exe
 .\ezwow.exe
 ```
 
-## Run from Source
-
-Requires Python 3.11+.
+### From source
 
 ```bash
 git clone https://github.com/jalsarraf0/ezwowaddon.git
 cd ezwowaddon
-pip install requests
-python ezwow.py
+python3.12 -m venv .venv
+.venv/bin/pip install -e ".[dev]"
+.venv/bin/ezwow         # GUI
+.venv/bin/ezwow list    # CLI
 ```
 
-## Build Executable Locally
+## CLI usage
+
+```
+ezwow                              # GUI
+ezwow list                         # all catalog addons
+ezwow list --installed
+ezwow list --updates
+ezwow install pfquest pfquest-turtle
+ezwow install --preset essential
+ezwow update --all
+ezwow remove bigwigs
+ezwow backup
+ezwow restore /path/to/backup.tar.gz
+ezwow profile export ~/my-setup.json
+ezwow profile import ~/my-setup.json
+ezwow doctor
+```
+
+## Catalog
+
+The curated catalog lives at [`catalog/addons.json`](catalog/addons.json). Pull requests adding or updating entries are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Build a binary locally
 
 ```bash
-pip install requests pyinstaller
-pyinstaller --noconfirm --onefile --windowed ezwow.py
+.venv/bin/pip install pyinstaller
+.venv/bin/pyinstaller --noconfirm --onefile --windowed \
+  --collect-all customtkinter --name ezwow ezwow.py
 ```
 
-The output binary is placed in `dist/`.
-
-## Dependencies
-
-- Python 3.11+
-- [requests](https://pypi.org/project/requests/)
-- tkinter (included in the Python standard library)
+Output in `dist/`.
 
 ## License
 
-MIT License — Copyright (c) 2025 Jamal Al-Sarraf
+MIT — Copyright (c) 2025 Jamal Al-Sarraf.

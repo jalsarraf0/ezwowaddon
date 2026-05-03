@@ -1,12 +1,16 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+from PyInstaller.utils.hooks import collect_all
+
+ctk_datas, ctk_binaries, ctk_hiddenimports = collect_all("customtkinter")
+
 
 a = Analysis(
     ['ezwow.py'],
     pathex=[],
-    binaries=[],
-    datas=[],
-    hiddenimports=[],
+    binaries=ctk_binaries,
+    datas=ctk_datas,
+    hiddenimports=ctk_hiddenimports,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -29,7 +33,7 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=True,
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
