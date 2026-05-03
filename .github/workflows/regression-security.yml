@@ -3,8 +3,7 @@ name: Regression and Security
 on:
   pull_request:
   push:
-    branches-ignore:
-      - gh-pages
+    branches: [main, dev, v2-development]
 
 permissions:
   contents: read
