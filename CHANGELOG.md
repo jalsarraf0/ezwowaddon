@@ -4,6 +4,36 @@ All notable changes to **EZWowAddon** will be documented in this file.
 
 ---
 
+## [v2.0.0] – 2026-05-03
+
+### Added
+
+- Full Python package rewrite: `ezwow/{catalog,core,ui,cli}` with strict types and tests.
+- Curated catalog at `catalog/addons.json`: 40+ addons + 6 client mods, 4 presets (Essential, Raider, Hardcore, Minimal UI).
+- Real update detection via Git SHA tracking + GitHub API ETag cache.
+- Presets / profiles: one-click loadouts; custom JSON import/export.
+- Backup / restore of AddOns + SavedVariables (tar.gz snapshots).
+- CLI mode: `ezwow install`, `update`, `list`, `remove`, `doctor`, `backup`, `restore`, `profile`.
+- CustomTkinter UI with side-nav, search, threaded installs, dark theme by default.
+- Auto-detection of Turtle launcher install path (`%APPDATA%/TurtleWoW/`) in addition to classic install.
+- Optional GitHub PAT for higher API rate limits.
+- Atomic install with zip-slip protection.
+- Nightly catalog URL smoke-test workflow.
+- Dependency resolution: pfQuest-Turtle automatically pulls pfQuest.
+- Client mods tab (VanillaFixes, SuperWoW, Nampower, UnitXP, VanillaTweaks, PerfBoost) — manual install for v2.0; auto-install slated for v2.1.
+
+### Changed
+
+- `ezwow.py` is now a thin shim over the `ezwow` package.
+- CI: dropped macOS, upgraded to Python 3.12, `actions/*@v4`, added lint + type + coverage gate.
+- Config moved to standard XDG/AppData locations (`~/.config/ezwowaddon/config.json` on Linux, `%APPDATA%/ezwowaddon/` on Windows).
+
+### Removed
+
+- macOS build target.
+
+---
+
 ## [v1.0.7] – 2025-06-05
 
 ### 🚀 Packaging
