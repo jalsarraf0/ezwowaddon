@@ -73,3 +73,11 @@ testpaths = ["tests"]
 [tool.coverage.run]
 source = ["ezwow"]
 omit = ["ezwow/ui/*", "ezwow/__main__.py"]
+
+[tool.pyright]
+include = ["ezwow", "tests", "ezwow.py"]
+venvPath = "."
+venv = ".venv"
+extraPaths = ["."]
+pythonVersion = "3.12"
+reportMissingImports = "warning"
