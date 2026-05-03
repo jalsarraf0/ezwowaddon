@@ -1,8 +1,30 @@
-
-# Ignore PyInstaller build artifacts
-build/
-dist/
-
-# Ignore Python cache files
+# Python
 __pycache__/
 *.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+*.spec.bak
+.venv/
+.tox/
+
+# Tooling
+.coverage
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+coverage.xml
+
+# IDE
+.idea/
+.vscode/
+
+# App runtime
+ezwow_config.json
+.ezwow-cache/
+
+# OS
+.DS_Store
+Thumbs.db
