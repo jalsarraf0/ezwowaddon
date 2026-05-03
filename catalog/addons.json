@@ -1,0 +1,87 @@
+{
+  "schema_version": 2,
+  "updated": "2026-05-03",
+  "categories": [
+    {"id": "ui", "label": "UI / Interface"},
+    {"id": "quest", "label": "Quest & Map"},
+    {"id": "combat", "label": "Combat & Meters"},
+    {"id": "auction", "label": "Auction House"},
+    {"id": "inventory", "label": "Inventory & Mail"},
+    {"id": "raid", "label": "Raid & Dungeon"},
+    {"id": "social", "label": "Social"},
+    {"id": "utility", "label": "Utility / Quality of Life"},
+    {"id": "client-mod", "label": "Client Mod"}
+  ],
+  "addons": [
+    {"id": "pfui", "name": "pfUI", "category": "ui", "description": "Full UI replacement for Vanilla & TBC", "author": "shagu", "github": "shagu/pfUI", "folder": "pfUI", "tags": ["popular"], "homepage": "https://shagu.org/pfUI"},
+    {"id": "shagu-tweaks", "name": "ShaguTweaks", "category": "ui", "description": "Quality-of-life tweaks for the default 1.12 UI", "author": "shagu", "github": "shagu/ShaguTweaks", "folder": "ShaguTweaks", "tags": ["essential"]},
+    {"id": "shagu-plates", "name": "ShaguPlates", "category": "ui", "description": "Standalone export of pfUI nameplates", "author": "shagu", "github": "shagu/ShaguPlates", "folder": "ShaguPlates"},
+    {"id": "moveanything", "name": "MoveAnything", "category": "ui", "description": "Reposition any UI element", "author": "Road-block", "github": "Road-block/MoveAnything", "folder": "MoveAnything"},
+    {"id": "newlevelframe", "name": "NewLevelFrame", "category": "ui", "description": "Level frame interface for Vanilla", "author": "Roadblock", "github": "Road-block/NewLevelFrame", "folder": "NewLevelFrame"},
+    {"id": "pfquest", "name": "pfQuest", "category": "quest", "description": "Quest helper with in-game map markers", "author": "shagu", "github": "shagu/pfQuest", "folder": "pfQuest", "tags": ["essential"], "homepage": "https://shagu.org/pfQuest"},
+    {"id": "pfquest-turtle", "name": "pfQuest-Turtle", "category": "quest", "description": "Turtle WoW-specific quest data extension", "author": "shagu", "github": "shagu/pfQuest-turtle", "folder": "pfQuest-turtle", "depends": ["pfquest"], "tags": ["essential", "turtle-only"]},
+    {"id": "pfextend", "name": "pfExtend", "category": "quest", "description": "Loot display + quest chain browser extension for pfQuest", "author": "shagu", "github": "shagu/pfExtend", "folder": "pfExtend", "depends": ["pfquest"]},
+    {"id": "cartographer", "name": "Cartographer", "category": "quest", "description": "Enhanced map with zone levels", "author": "laytya", "github": "laytya/Cartographer", "folder": "Cartographer"},
+    {"id": "cromulent", "name": "Cromulent's Map Addon", "category": "quest", "description": "Lightweight map with coordinates", "author": "Road-block", "github": "Road-block/Cromulent", "folder": "Cromulent"},
+    {"id": "modern-map-markers", "name": "ModernMapMarkers", "category": "quest", "description": "Updated map marker visuals", "author": "wardz", "github": "wardz/ModernMapMarkers", "folder": "ModernMapMarkers"},
+    {"id": "bigwigs", "name": "BigWigs", "category": "combat", "description": "Boss warnings and ability timers", "author": "CosminPOP", "github": "CosminPOP/BigWigs", "folder": "BigWigs", "tags": ["raider"]},
+    {"id": "shagudps", "name": "ShaguDPS", "category": "combat", "description": "Lightweight damage meter", "author": "shagu", "github": "shagu/ShaguDPS", "folder": "ShaguDPS"},
+    {"id": "dpsmate", "name": "DPSMate", "category": "combat", "description": "Comprehensive damage tracking", "author": "ProjectAzerothGitHub", "github": "ProjectAzerothGitHub/DPSMate-Updated", "folder": "DPSMate"},
+    {"id": "tww-threat", "name": "TWW Threat", "category": "combat", "description": "Turtle WoW threat meter", "author": "TheKaitilyn", "github": "TheKaitilyn/TWW-Threat", "folder": "TWWThreat"},
+    {"id": "classic-snowfall", "name": "Classic Snowfall", "category": "combat", "description": "Faster keypress response in combat", "author": "ratamahatta-zero", "github": "ratamahatta-zero/ClassicSnowfall-Vanilla", "folder": "ClassicSnowfall"},
+    {"id": "sp-swing-timer", "name": "SP Swing Timer", "category": "combat", "description": "Melee swing timer display", "author": "smp4488", "github": "smp4488/SP_SwingTimer-Vanilla", "folder": "SP_SwingTimer"},
+    {"id": "proc-doc", "name": "Proc Doc", "category": "combat", "description": "Tracks proc cooldowns and reminders", "author": "Road-block", "github": "Road-block/ProcDoc", "folder": "ProcDoc"},
+    {"id": "attack-bar", "name": "Attack Bar", "category": "combat", "description": "Action bar overlay during attacks", "author": "Geigerkind", "github": "Geigerkind/AttackBar", "folder": "AttackBar"},
+    {"id": "aux", "name": "Aux", "category": "auction", "description": "Powerful auction house revamp", "author": "gwetchen", "github": "gwetchen/aux-addon", "folder": "aux-addon", "tags": ["essential"]},
+    {"id": "auctionator", "name": "Auctionator", "category": "auction", "description": "Simplified auction house UI", "author": "nimeral", "github": "nimeral/AuctionatorVanilla", "folder": "Auctionator"},
+    {"id": "bagnon", "name": "Bagnon", "category": "inventory", "description": "Combined bag interface with search", "author": "laytya", "github": "laytya/Bagnon-Vanilla", "folder": "Bagnon"},
+    {"id": "bagshui", "name": "BagShui", "category": "inventory", "description": "Alternative bag manager", "author": "veechs", "github": "veechs/BagShui", "folder": "BagShui"},
+    {"id": "turtle-mail", "name": "Turtle Mail", "category": "inventory", "description": "Multi-message mail enhancement", "author": "Aubratus", "github": "Aubratus/TurtleMail", "folder": "TurtleMail", "tags": ["turtle-only"]},
+    {"id": "atlas-turtle", "name": "Atlas Turtle", "category": "raid", "description": "Dungeon layout maps", "author": "TheKaitilyn", "github": "TheKaitilyn/Atlas-Turtle-WoW", "folder": "Atlas", "tags": ["turtle-only"]},
+    {"id": "atlas-loot-turtle", "name": "AtlasLoot Turtle", "category": "raid", "description": "Boss loot database", "author": "TheKaitilyn", "github": "TheKaitilyn/AtlasLoot-Turtle-WoW", "folder": "AtlasLoot", "tags": ["turtle-only"]},
+    {"id": "atlas-quest-turtle", "name": "Atlas Quest Turtle", "category": "raid", "description": "Dungeon quest tracking", "author": "TheKaitilyn", "github": "TheKaitilyn/AtlasQuest-Turtle-WoW", "folder": "AtlasQuest", "tags": ["turtle-only"]},
+    {"id": "wim", "name": "WIM", "category": "social", "description": "Whispers in instant-message style windows", "author": "MaximilianHoffmann", "github": "MaximilianHoffmann/WIM-Vanilla", "folder": "WIM"},
+    {"id": "global-friends-list", "name": "GlobalFriendsList", "category": "social", "description": "Hardcore-mode friend auto-readd", "author": "Aubratus", "github": "Aubratus/GlobalFriendsList", "folder": "GlobalFriendsList", "tags": ["hardcore"]},
+    {"id": "friend-o-tron", "name": "Friend-O-Tron", "category": "social", "description": "Sync friends across alts", "author": "TheKaitilyn", "github": "TheKaitilyn/Friend-O-Tron", "folder": "FriendOTron"},
+    {"id": "restbar", "name": "Restbar", "category": "utility", "description": "Rested XP tracker", "author": "Road-block", "github": "Road-block/Restbar", "folder": "Restbar"},
+    {"id": "bettercharacterstats", "name": "BetterCharacterStats", "category": "utility", "description": "Enhanced character pane", "author": "ProjectAzerothGitHub", "github": "ProjectAzerothGitHub/BetterCharacterStats", "folder": "BetterCharacterStats", "tags": ["popular"]},
+    {"id": "pet-xp-bar", "name": "Pet XP Bar", "category": "utility", "description": "Hunter pet XP display", "author": "Aubratus", "github": "Aubratus/PetXPBar", "folder": "PetXPBar"},
+    {"id": "minimap-button-bag", "name": "Minimap Button Bag", "category": "utility", "description": "Consolidates minimap buttons", "author": "Road-block", "github": "Road-block/MinimapButtonBag", "folder": "MinimapButtonBag"},
+    {"id": "level-range", "name": "Level Range", "category": "utility", "description": "Show enemy level color range", "author": "TheKaitilyn", "github": "TheKaitilyn/LevelRange", "folder": "LevelRange"},
+    {"id": "missing-crafts", "name": "MissingCrafts", "category": "utility", "description": "Show missing crafts for professions", "author": "smp4488", "github": "smp4488/MissingCrafts", "folder": "MissingCrafts"},
+    {"id": "master-trade-skills", "name": "MasterTradeSkills", "category": "utility", "description": "Trade-skill info in tooltips", "author": "smp4488", "github": "smp4488/MasterTradeSkills", "folder": "MasterTradeSkills"},
+    {"id": "item-tooltip-icons", "name": "ItemTooltipIcons", "category": "utility", "description": "Profession icons in tooltips", "author": "smp4488", "github": "smp4488/ItemTooltipIcons", "folder": "ItemTooltipIcons"},
+    {"id": "voiceover", "name": "VoiceOver", "category": "utility", "description": "Voice-acted quest text", "author": "mrthinger", "github": "mrthinger/wow-voiceover", "folder": "AI_VoiceOver"},
+    {"id": "pizza-world-buffs", "name": "PizzaWorldBuffs", "category": "utility", "description": "Track world-buff timers", "author": "PizzaPie", "github": "PizzaPie/PizzaWorldBuffs", "folder": "PizzaWorldBuffs"}
+  ],
+  "client_mods": [
+    {"id": "vanillafixes", "name": "VanillaFixes", "description": "Stutter and animation fixes; optional Vulkan via DXVK", "github": "RetroCro/TurtleWoW-Mods", "asset_pattern": "VanillaFixes*.zip", "install_to": "data_root", "files_to_install": ["VanillaFixes.exe", "*.dll"], "tags": ["essential", "performance"]},
+    {"id": "superwow", "name": "SuperWoW", "description": "Expands Lua API and macro length", "github": "RetroCro/TurtleWoW-Mods", "asset_pattern": "SuperWoW*.zip", "install_to": "data_root", "files_to_install": ["SuperWoWPatch.dll", "*.exe"], "tags": ["essential"]},
+    {"id": "nampower", "name": "Nampower", "description": "Spell queueing and quickcasting", "github": "RetroCro/TurtleWoW-Mods", "asset_pattern": "Nampower*.zip", "install_to": "data_root", "files_to_install": ["nampower.dll"]},
+    {"id": "unitxp-sp3", "name": "UnitXP SP3", "description": "Camera, nameplates, background notifications", "github": "RetroCro/TurtleWoW-Mods", "asset_pattern": "UnitXP*.zip", "install_to": "data_root", "files_to_install": ["UnitXP.dll"]},
+    {"id": "vanillatweaks", "name": "VanillaTweaks", "description": "Widescreen FoV, farclip, right-click autoloot", "github": "RetroCro/TurtleWoW-Mods", "asset_pattern": "VanillaTweaks*.zip", "install_to": "data_root", "files_to_install": ["VanillaTweaks.exe", "*.dll"]},
+    {"id": "perfboost", "name": "PerfBoost", "description": "Per-unit-type render distance tuning", "github": "RetroCro/TurtleWoW-Mods", "asset_pattern": "PerfBoost*.zip", "install_to": "data_root", "files_to_install": ["*.dll"]}
+  ],
+  "presets": {
+    "essential": {
+      "label": "Essential (new players)",
+      "addons": ["pfquest", "pfquest-turtle", "shagu-tweaks", "bagnon", "aux", "bettercharacterstats"],
+      "client_mods": ["vanillafixes"]
+    },
+    "raider": {
+      "label": "Raider",
+      "addons": ["pfquest", "pfquest-turtle", "bigwigs", "shagudps", "pfui", "bettercharacterstats", "atlas-turtle", "atlas-loot-turtle"],
+      "client_mods": ["vanillafixes", "superwow"]
+    },
+    "hardcore": {
+      "label": "Hardcore",
+      "addons": ["pfquest", "pfquest-turtle", "global-friends-list", "restbar", "level-range"],
+      "client_mods": ["vanillafixes"]
+    },
+    "minimal-ui": {
+      "label": "Minimal UI",
+      "addons": ["shagu-tweaks", "bagnon"],
+      "client_mods": []
+    }
+  }
+}
