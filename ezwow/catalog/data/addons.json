@@ -255,10 +255,9 @@
       "id": "dpsmate",
       "name": "DPSMate (vanilla+)",
       "category": "combat",
-      "description": "Comprehensive damage tracking, modified port",
-      "author": "TerraBaddie",
-      "github": "TerraBaddie/DPSMate-vanillaplus",
-      "branch": "main",
+      "description": "Comprehensive Vanilla 1.12.1 combat analyzer (canonical)",
+      "author": "tdymel",
+      "github": "tdymel/DPSMate",
       "folder": "DPSMate"
     },
     {
@@ -1282,6 +1281,258 @@
       "github": "OldManAlpha/UnitXP_SP3_Addon",
       "branch": "latest",
       "folder": "UnitXP_SP3_Addon"
+    },
+    {
+      "id": "modified-power-auras",
+      "name": "Modified Power Auras",
+      "category": "combat",
+      "description": "Advanced Power Auras for Vanilla 1.12.1",
+      "author": "tdymel",
+      "github": "tdymel/ModifiedPowerAuras",
+      "folder": "ModifiedPowerAuras"
+    },
+    {
+      "id": "vcb",
+      "name": "VCB",
+      "category": "ui",
+      "description": "Highly customizable buff frame with retail-style consolidation",
+      "author": "tdymel",
+      "github": "tdymel/VCB",
+      "folder": "VCB"
+    },
+    {
+      "id": "one-button-hunter",
+      "name": "OneButtonHunter",
+      "category": "combat",
+      "description": "One-button rotation for hunters",
+      "author": "tdymel",
+      "github": "tdymel/OneButtonHunter",
+      "folder": "OneButtonHunter"
+    },
+    {
+      "id": "stopwatch",
+      "name": "StopWatch",
+      "category": "utility",
+      "description": "Movable stopwatch widget",
+      "author": "tdymel",
+      "github": "tdymel/StopWatch",
+      "folder": "StopWatch"
+    },
+    {
+      "id": "expand-assist",
+      "name": "ExpandAssist",
+      "category": "combat",
+      "description": "Expanded /assist with macro support",
+      "author": "tdymel",
+      "github": "tdymel/ExpandAssist",
+      "folder": "ExpandAssist"
+    },
+    {
+      "id": "sp-swing-timer",
+      "name": "SP SwingTimer",
+      "category": "combat",
+      "description": "Auto-attack swing timer (canonical)",
+      "author": "EinBaum",
+      "github": "EinBaum/SP_SwingTimer",
+      "folder": "SP_SwingTimer"
+    },
+    {
+      "id": "super-ignore",
+      "name": "SuperIgnore",
+      "category": "social",
+      "description": "Unlimited ignore list with spam blocker",
+      "author": "EinBaum",
+      "github": "EinBaum/SuperIgnore",
+      "folder": "SuperIgnore"
+    },
+    {
+      "id": "tiny-tip",
+      "name": "TinyTip",
+      "category": "ui",
+      "description": "Improved tooltip (modified port)",
+      "author": "EinBaum",
+      "github": "EinBaum/TinyTip",
+      "folder": "TinyTip"
+    },
+    {
+      "id": "sp-overpower",
+      "name": "SP Overpower",
+      "category": "combat",
+      "description": "Warrior Overpower alert + timer",
+      "author": "EinBaum",
+      "github": "EinBaum/SP_Overpower",
+      "folder": "SP_Overpower"
+    },
+    {
+      "id": "disable-escape",
+      "name": "DisableEscape",
+      "category": "utility",
+      "description": "Stop the Escape key from cancelling invites/summons",
+      "author": "EinBaum",
+      "github": "EinBaum/DisableEscape",
+      "folder": "DisableEscape"
+    },
+    {
+      "id": "map-target",
+      "name": "MapTarget",
+      "category": "combat",
+      "description": "Minimap tracking improvements for hunters",
+      "author": "EinBaum",
+      "github": "EinBaum/MapTarget",
+      "folder": "MapTarget"
+    },
+    {
+      "id": "auto-bg",
+      "name": "AutoBG",
+      "category": "utility",
+      "description": "Battleground auto-queue/join/leave/release",
+      "author": "EinBaum",
+      "github": "EinBaum/_AutoBG",
+      "folder": "_AutoBG"
+    },
+    {
+      "id": "vf-warrior",
+      "name": "VF WarriorAddon",
+      "category": "combat",
+      "description": "Last Stand / Shield Wall / missed-taunt announcer",
+      "author": "Dilatazu",
+      "github": "EinBaum/VF_WarriorAddon",
+      "folder": "VF_WarriorAddon"
+    },
+    {
+      "id": "xfaction-chat",
+      "name": "XFactionChat",
+      "category": "social",
+      "description": "Cross-faction chat (relevant on Turtle)",
+      "author": "EinBaum",
+      "github": "EinBaum/XFactionChat",
+      "folder": "XFactionChat"
+    },
+    {
+      "id": "auction-sniper",
+      "name": "AuctionSniper",
+      "category": "auction",
+      "description": "Snipe deals from the neutral auction house",
+      "author": "EinBaum",
+      "github": "EinBaum/AuctionSniper",
+      "folder": "AuctionSniper"
+    },
+    {
+      "id": "sk-map",
+      "name": "SKMap",
+      "category": "utility",
+      "description": "Shim Kill Map (modified)",
+      "author": "EinBaum",
+      "github": "EinBaum/SKMap",
+      "folder": "SKMap"
+    },
+    {
+      "id": "auction-alt-buy",
+      "name": "AuctionAltBuy",
+      "category": "auction",
+      "description": "Alt-click auctions to buy/cancel instantly",
+      "author": "EinBaum",
+      "github": "EinBaum/AuctionAltBuy",
+      "folder": "AuctionAltBuy"
+    },
+    {
+      "id": "chronicles-buff-assignments",
+      "name": "ChroniclesBuffAssignments",
+      "category": "raid",
+      "description": "Generate raid buff assignments",
+      "author": "EinBaum",
+      "github": "EinBaum/ChroniclesBuffAssignments",
+      "folder": "ChroniclesBuffAssignments"
+    },
+    {
+      "id": "taco-tip",
+      "name": "TacoTip",
+      "category": "ui",
+      "description": "Player tooltips with class colors, talents, GearScore",
+      "author": "anzz1",
+      "github": "anzz1/TacoTip",
+      "folder": "TacoTip"
+    },
+    {
+      "id": "sell-value",
+      "name": "SellValue",
+      "category": "utility",
+      "description": "Vendor prices in tooltips",
+      "author": "anzz1",
+      "github": "anzz1/SellValue",
+      "folder": "SellValue"
+    },
+    {
+      "id": "omni-cc",
+      "name": "OmniCC",
+      "category": "ui",
+      "description": "Universal cooldown count overlay (lightweight)",
+      "author": "anzz1",
+      "github": "anzz1/OmniCC",
+      "folder": "OmniCC"
+    },
+    {
+      "id": "free-bag-slots",
+      "name": "FreeBagSlots",
+      "category": "inventory",
+      "description": "Bag slot counter at a glance",
+      "author": "anzz1",
+      "github": "anzz1/FreeBagSlots",
+      "folder": "FreeBagSlots"
+    },
+    {
+      "id": "auto-shot",
+      "name": "AutoShot",
+      "category": "utility",
+      "description": "Auto-screenshot at specific events",
+      "author": "WouterBink",
+      "github": "WouterBink/AutoShot",
+      "folder": "AutoShot"
+    },
+    {
+      "id": "ez-poison-canonical",
+      "name": "EzPoison (canonical)",
+      "category": "combat",
+      "description": "Original rogue poison helper",
+      "author": "Voidmenull",
+      "github": "Voidmenull/EzPoison",
+      "folder": "EzPoison"
+    },
+    {
+      "id": "egnar",
+      "name": "Egnar",
+      "category": "combat",
+      "description": "Range indicator for hunters",
+      "author": "Medeah",
+      "github": "Medeah/Egnar",
+      "folder": "Egnar"
+    },
+    {
+      "id": "achiever",
+      "name": "Achiever",
+      "category": "utility",
+      "description": "Achievement tracking for Vanilla 1.12.1",
+      "author": "tsaah",
+      "github": "tsaah/Achiever",
+      "folder": "Achiever"
+    },
+    {
+      "id": "evt-calendar",
+      "name": "EVTCalendar",
+      "category": "utility",
+      "description": "Event calendar",
+      "author": "TheOneReed",
+      "github": "TheOneReed/EVTCalendar",
+      "folder": "EVTCalendar"
+    },
+    {
+      "id": "salad-cthun",
+      "name": "Salad C'thun",
+      "category": "raid",
+      "description": "C'thun positioning helper",
+      "author": "goffauxs",
+      "github": "goffauxs/Salad_Cthun",
+      "folder": "Salad_Cthun"
     }
   ],
   "client_mods": [
@@ -1405,7 +1656,10 @@
         "interruptor",
         "trinket-menu",
         "quick-heal",
-        "klh-threat-meter"
+        "klh-threat-meter",
+        "modified-power-auras",
+        "vcb",
+        "omni-cc"
       ],
       "client_mods": [
         "vanillafixes",

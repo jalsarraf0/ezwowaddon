@@ -4,6 +4,28 @@ All notable changes to **EZWowAddon** will be documented in this file.
 
 ---
 
+## [v2.2.1] – 2026-05-03
+
+### Added
+
+- Catalog grew to **151 verified addons** (was 123 in v2.2.0). 28 more clusters surfaced via deeper research.
+  - **tdymel cluster**: ModifiedPowerAuras (50⭐), VCB (34⭐), OneButtonHunter, StopWatch, ExpandAssist
+  - **EinBaum cluster**: SP_SwingTimer (25⭐, canonical), SuperIgnore (16⭐), TinyTip, SP_Overpower, DisableEscape, MapTarget, _AutoBG, VF_WarriorAddon, XFactionChat, AuctionSniper, SKMap, AuctionAltBuy, ChroniclesBuffAssignments
+  - **anzz1 cluster**: TacoTip (player tooltips with GearScore), SellValue, OmniCC, FreeBagSlots
+  - Plus: WouterBink/AutoShot, Voidmenull/EzPoison (canonical), Medeah/Egnar (hunter range), tsaah/Achiever, TheOneReed/EVTCalendar, goffauxs/Salad_Cthun
+
+### Changed
+
+- **dpsmate** entry now points at the canonical **tdymel/DPSMate** (97⭐) instead of TerraBaddie's `vanillaplus` fork. Auto-detects default branch.
+- **Raider preset** gains modified-power-auras + vcb + omni-cc (essentials for raid setups).
+
+### Quality
+
+- All 151 URLs HEAD-verified before ship.
+- Many new entries omit `branch:` to leverage v2.2.0's auto-default-branch detection.
+
+---
+
 ## [v2.2.0] – 2026-05-03
 
 ### Added
