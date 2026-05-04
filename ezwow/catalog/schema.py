@@ -8,6 +8,7 @@ from typing import Any, Literal
 
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 SUPPORTED_SCHEMA_VERSION = 2
+DEFAULT_FALLBACK_BRANCH = "master"
 
 
 class SchemaError(ValueError):
@@ -28,15 +29,17 @@ class Addon:
     description: str
     author: str
     github: str
-    branch: str = "master"
+    branch: str | None = None
     use_releases: bool = False
     folder: str = ""
     depends: tuple[str, ...] = ()
     tags: tuple[str, ...] = ()
     homepage: str | None = None
 
-    def branch_zip_url(self) -> str:
-        return f"https://github.com/{self.github}/archive/refs/heads/{self.branch}.zip"
+    def branch_zip_url(self, branch: str | None = None) -> str:
+        """URL of the branch tarball. Pass an explicit branch to override the catalog value."""
+        b = branch or self.branch or DEFAULT_FALLBACK_BRANCH
+        return f"https://github.com/{self.github}/archive/refs/heads/{b}.zip"
 
 
 InstallTarget = Literal["data_root", "addons_folder"]
@@ -112,7 +115,7 @@ def parse_catalog(raw: dict[str, Any]) -> Catalog:
                 description=entry["description"],
                 author=entry["author"],
                 github=entry["github"],
-                branch=entry.get("branch", "master"),
+                branch=entry.get("branch"),
                 use_releases=bool(entry.get("use_releases", False)),
                 folder=entry.get("folder", entry["id"]),
                 depends=tuple(entry.get("depends", [])),

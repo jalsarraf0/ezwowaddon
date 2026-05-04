@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ezwowaddon"
-version = "2.1.0"
+version = "2.2.0"
 description = "World-class Turtle WoW addon and client-mod manager"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -73,6 +73,10 @@ testpaths = ["tests"]
 [tool.coverage.run]
 source = ["ezwow"]
 omit = ["ezwow/ui/*", "ezwow/__main__.py"]
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
 
 [tool.pyright]
 include = ["ezwow", "tests", "ezwow.py"]

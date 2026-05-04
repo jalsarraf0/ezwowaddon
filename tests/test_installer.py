@@ -89,3 +89,71 @@ def test_install_rejects_zip_slip(
             target_root=fake_addons_folder,
             folder_name="evil",
         )
+
+
+def test_install_rejects_corrupt_zip(fake_addons_folder: pathlib.Path):
+    with pytest.raises(InstallError, match="corrupt zip"):
+        installer._extract_zip_atomic(
+            zip_bytes=b"definitely not a zip file",
+            target_root=fake_addons_folder,
+            folder_name="x",
+        )
+
+
+def test_install_rejects_empty_zip(
+    tmp_path: pathlib.Path, fake_addons_folder: pathlib.Path
+):
+    import zipfile
+
+    empty = tmp_path / "empty.zip"
+    with zipfile.ZipFile(empty, "w"):
+        pass
+    with pytest.raises(InstallError, match="contains no files"):
+        installer._extract_zip_atomic(
+            zip_bytes=empty.read_bytes(),
+            target_root=fake_addons_folder,
+            folder_name="x",
+        )
+
+
+def test_install_rejects_missing_top_level_dir(
+    tmp_path: pathlib.Path, fake_addons_folder: pathlib.Path
+):
+    """Top-level dir is taken from the first file's path; if it doesn't exist as a dir, fail."""
+    import zipfile
+
+    weird = tmp_path / "weird.zip"
+    with zipfile.ZipFile(weird, "w") as zf:
+        # First member references a top_level dir but no actual files inside it
+        zf.writestr("ghost-dir/loose.txt", "x")
+        # Then add a file at root level (no top_level dir match)
+        zf.writestr("root.txt", "y")
+    # Manually craft so first non-dir member's split yields a top_level dir
+    # that won't exist after extract — actually the zip above WILL extract
+    # ghost-dir as a real dir. Use a truly path-less first member.
+    weird2 = tmp_path / "weird2.zip"
+    with zipfile.ZipFile(weird2, "w") as zf:
+        zf.writestr("loneifle.txt", "z")  # split('/', 1)[0] == "loneifle.txt"
+    with pytest.raises(InstallError, match="expected top-level dir"):
+        installer._extract_zip_atomic(
+            zip_bytes=weird2.read_bytes(),
+            target_root=fake_addons_folder,
+            folder_name="x",
+        )
+
+
+def test_install_from_url_raises_on_request_exception(
+    fake_addons_folder: pathlib.Path, monkeypatch: pytest.MonkeyPatch
+):
+    import requests
+
+    def boom(*_a: object, **_kw: object) -> object:
+        raise requests.ConnectionError("offline")
+
+    monkeypatch.setattr(installer.requests, "get", boom)
+    with pytest.raises(InstallError, match="download failed"):
+        installer.install_from_url(
+            url="http://nope.invalid/x.zip",
+            addons_folder=fake_addons_folder,
+            target_folder_name="X",
+        )

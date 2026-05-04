@@ -79,3 +79,10 @@ def test_resolve_raises_on_unknown():
     cat = _make_catalog([_addon("a")])
     with pytest.raises(KeyError):
         deps.resolve(["unknown"], cat)
+
+
+def test_resolve_raises_on_unknown_transitive_dep():
+    """When an addon depends on a missing one, the inner visit() guard catches it."""
+    cat = _make_catalog([_addon("a", ("missing-dep",))])
+    with pytest.raises(KeyError, match="missing-dep"):
+        deps.resolve(["a"], cat)

@@ -6,7 +6,7 @@ import pathlib
 from dataclasses import dataclass
 
 from ezwow.catalog.schema import Catalog
-from ezwow.core import manifest
+from ezwow.core import manifest, pipeline
 from ezwow.core.github import GitHubClient
 
 
@@ -37,7 +37,8 @@ def plan(
         if addon.use_releases:
             latest = gh_client.latest_release_tag(addon.github)
         else:
-            latest = gh_client.branch_head_sha(addon.github, addon.branch)
+            branch = pipeline.resolve_branch(addon, gh_client)
+            latest = gh_client.branch_head_sha(addon.github, branch)
         if latest is None:
             continue
         if entry.sha != latest:

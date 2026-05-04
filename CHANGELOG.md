@@ -4,6 +4,29 @@ All notable changes to **EZWowAddon** will be documented in this file.
 
 ---
 
+## [v2.2.0] – 2026-05-03
+
+### Added
+
+- **Auto-default-branch detection.** `Addon.branch` is now optional. When omitted, the installer queries `GitHubClient.default_branch()` and uses whatever the upstream repo currently considers default. When an addon author switches `master`↔`main`, our installer keeps working — no catalog PR needed. Explicit `branch:` in the catalog still wins for repos that ship from a non-default branch.
+- New `ezwow.core.pipeline.resolve_branch()` function — single source of truth for which branch to install from.
+- **Toast notifications.** New `ezwow.ui.widgets.toast.ToastManager` slides in non-blocking notifications at the bottom-right (info/success/warning/error). Replaces blocking `messagebox.showinfo` for routine feedback.
+- **Beautiful addon cards.** New `ezwow.ui.widgets.addon_card.AddonCard` — rounded corners, state-coloured pills (Installed=green, Update=amber, Available=blue, Installing=neutral), per-card action button. Browse + Installed tabs use them.
+- **Category icons** in Browse tab section headers (🖼️ UI, 📜 Quest, ⚔️ Combat, 💰 Auction, 🎒 Inventory, 🐉 Raid, 💬 Social, 🔧 Utility).
+- Side-nav highlights the active tab in blue.
+
+### Changed
+
+- **`ezwow.core` coverage gated at 100%** (was 70% target → 91% actual → now 100% lock). Added 19 targeted tests across backup, deps, detector, github, installer, profile, updater. CI fails if coverage drops.
+- CI workflow gains: `timeout-minutes: 10`, `actions/setup-python` cache, `persist-credentials: false`, explicit `shell: bash` per step (orchestrator-clean).
+
+### Code quality
+
+- 110 tests pass (was 91 in v2.1.0).
+- ruff strict, mypy strict, no warnings.
+
+---
+
 ## [v2.1.0] – 2026-05-03
 
 ### Added

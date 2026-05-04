@@ -62,3 +62,11 @@ def test_import_profile_returns_lists(tmp_path: pathlib.Path):
     assert p.label == "x"
     assert p.addons == ["a"]
     assert p.client_mods == ["b"]
+
+
+def test_resolve_preset_raises_on_unknown_id():
+    import pytest
+
+    cat = _cat()
+    with pytest.raises(KeyError, match="unknown preset"):
+        profile.resolve_preset("does-not-exist", cat)

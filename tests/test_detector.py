@@ -52,3 +52,16 @@ def test_env_override_turtlewow_home(
     monkeypatch.setenv("TURTLEWOW_HOME", str(tmp_path / "TWoW"))
     paths = detector._candidate_paths()
     assert fake in paths
+
+
+def test_env_override_wineprefix(
+    tmp_path: pathlib.Path, monkeypatch: pytest.MonkeyPatch
+):
+    monkeypatch.setenv("WINEPREFIX", str(tmp_path / "wp"))
+    paths = detector._candidate_paths()
+    expected = tmp_path / "wp" / "drive_c" / "Games" / "Turtle WoW" / "Interface" / "AddOns"
+    assert expected in paths
+
+
+def test_find_data_folder_returns_none_for_none_input():
+    assert detector.find_data_folder(addons=None) is None

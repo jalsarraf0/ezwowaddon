@@ -36,11 +36,12 @@ def http_fixture() -> Iterator[str]:
             srv.shutdown()
 
 
-def _addon_against(http_fixture: str) -> Addon:
+def _addon_against(http_fixture: str, branch: str | None = "master") -> Addon:
     """Build an Addon whose branch_zip_url() points at our local HTTP fixture."""
 
     class _UrlOverride(Addon):
-        def branch_zip_url(self) -> str:
+        def branch_zip_url(self, branch: str | None = None) -> str:
+            del branch
             return f"{http_fixture}/sample-addon-master.zip"
 
     return _UrlOverride(
@@ -50,7 +51,7 @@ def _addon_against(http_fixture: str) -> Addon:
         description="d",
         author="a",
         github="x/y",
-        branch="master",
+        branch=branch,
         folder="SampleAddon",
     )
 
@@ -68,6 +69,7 @@ def test_install_addon_records_manifest(
 
     assert entry.addon_id == "sample"
     assert entry.sha == "deadbeef"
+    assert entry.ref == "master"
     assert (fake_addons_folder / "SampleAddon" / "SampleAddon.toc").exists()
     loaded = manifest.load(fake_addons_folder)
     assert "sample" in loaded.installs
@@ -106,3 +108,69 @@ def test_update_addon_falls_back_to_gh_when_sha_none(
 
     assert entry.sha == "fetchedsha"
     gh.branch_head_sha.assert_called_once()
+
+
+def test_resolve_branch_uses_explicit_catalog_branch():
+    addon = Addon(
+        id="x",
+        name="X",
+        category="utility",
+        description="",
+        author="",
+        github="o/r",
+        branch="dev",
+        folder="X",
+    )
+    gh = MagicMock()
+    gh.default_branch.return_value = "main"
+    assert pipeline.resolve_branch(addon, gh) == "dev"
+    gh.default_branch.assert_not_called()
+
+
+def test_resolve_branch_queries_github_when_branch_omitted():
+    addon = Addon(
+        id="x",
+        name="X",
+        category="utility",
+        description="",
+        author="",
+        github="o/r",
+        branch=None,
+        folder="X",
+    )
+    gh = MagicMock()
+    gh.default_branch.return_value = "main"
+    assert pipeline.resolve_branch(addon, gh) == "main"
+    gh.default_branch.assert_called_once_with("o/r")
+
+
+def test_resolve_branch_falls_back_to_master_when_github_unavailable():
+    addon = Addon(
+        id="x",
+        name="X",
+        category="utility",
+        description="",
+        author="",
+        github="o/r",
+        branch=None,
+        folder="X",
+    )
+    gh = MagicMock()
+    gh.default_branch.return_value = None
+    assert pipeline.resolve_branch(addon, gh) == "master"
+
+
+def test_install_addon_uses_resolved_branch_when_catalog_branch_omitted(
+    http_fixture: str, fake_addons_folder: pathlib.Path
+):
+    addon = _addon_against(http_fixture, branch=None)
+    gh = MagicMock()
+    gh.default_branch.return_value = "main"
+    gh.branch_head_sha.return_value = "abc"
+
+    entry = pipeline.install_addon(
+        addon=addon, addons_folder=fake_addons_folder, gh_client=gh
+    )
+
+    assert entry.ref == "main"
+    gh.branch_head_sha.assert_called_once_with("x/y", "main")

@@ -110,3 +110,12 @@ class GitHubClient:
             return []
         assets = body.get("assets", [])
         return assets if isinstance(assets, list) else []
+
+    def default_branch(self, repo: str) -> str | None:
+        """Return the repo's default branch name (master, main, etc.) or None on failure."""
+        url = f"{API_ROOT}/repos/{repo}"
+        body = self._get_with_cache(f"repo:{repo}", url)
+        if not body:
+            return None
+        branch = body.get("default_branch")
+        return branch if isinstance(branch, str) else None

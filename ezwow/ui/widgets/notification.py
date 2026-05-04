@@ -1,4 +1,4 @@
-"""Modal notification helper."""
+"""Modal notification helper. Prefer toast.ToastManager for non-blocking surfacing."""
 
 from __future__ import annotations
 

@@ -37,3 +37,25 @@ def test_create_skips_when_addons_missing(tmp_path: pathlib.Path):
             wow_root=tmp_path / "nope",
             out_dir=tmp_path / "out",
         )
+
+
+def test_restore_raises_when_archive_missing(tmp_path: pathlib.Path):
+    with pytest.raises(backup.BackupError, match="archive not found"):
+        backup.restore_backup(archive=tmp_path / "nope.tar.gz", wow_root=tmp_path)
+
+
+def test_restore_rejects_archive_with_path_traversal(
+    fake_wow_root: pathlib.Path, tmp_path: pathlib.Path
+):
+    """Restore must reject tarballs containing .. or absolute paths."""
+    import io
+    import tarfile
+
+    archive = tmp_path / "evil.tar.gz"
+    with tarfile.open(archive, "w:gz") as tar:
+        info = tarfile.TarInfo(name="../escape.txt")
+        info.size = 4
+        tar.addfile(info, io.BytesIO(b"boom"))
+
+    with pytest.raises(backup.BackupError, match="unsafe path"):
+        backup.restore_backup(archive=archive, wow_root=fake_wow_root)
