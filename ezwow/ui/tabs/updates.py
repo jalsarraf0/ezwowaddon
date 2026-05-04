@@ -2,14 +2,13 @@
 
 from __future__ import annotations
 
-import datetime as dt
 import threading
 from typing import TYPE_CHECKING
 
 import customtkinter as ctk
 
 from ezwow import config
-from ezwow.core import github, installer, manifest, updater
+from ezwow.core import github, installer, pipeline, updater
 from ezwow.ui.widgets import notification
 
 if TYPE_CHECKING:
@@ -76,26 +75,14 @@ class UpdatesTab(ctk.CTkFrame):  # type: ignore[misc]
                 continue
             self.app.set_status(f"updating {addon.id}…")
             try:
-                result = installer.install_from_url(
-                    url=addon.branch_zip_url(),
+                pipeline.update_addon_to_sha(
+                    addon=addon,
                     addons_folder=self.app.addons_folder,
-                    target_folder_name=addon.folder,
+                    gh_client=gh,
+                    target_sha=u.latest,
                 )
             except installer.InstallError as exc:
                 self.app.after(0, lambda e=exc: notification.error("Update failed", str(e)))
                 return
-            manifest.record(
-                self.app.addons_folder,
-                manifest.InstallEntry(
-                    addon_id=addon.id,
-                    folder=addon.folder,
-                    source=f"github:{addon.github}",
-                    ref=addon.branch,
-                    sha=u.latest,
-                    installed_at=dt.datetime.now(dt.UTC),
-                    files=result.files,
-                    size_bytes=result.size_bytes,
-                ),
-            )
         self.app.after(0, lambda: self.app.set_status("Ready."))
         self.app.after(0, self._refresh)

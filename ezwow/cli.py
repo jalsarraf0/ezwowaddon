@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import datetime as dt
 import logging
 import pathlib
 import shutil
@@ -19,6 +18,7 @@ from ezwow.core import (
     github,
     installer,
     manifest,
+    pipeline,
     profile,
     updater,
 )
@@ -150,29 +150,12 @@ def _do_install_ids(addon_ids: list[str]) -> int:
         addon = cat.addon_by_id(aid)
         if addon is None:
             continue
-        url = addon.branch_zip_url()
-        print(f"installing {aid} from {url}")
+        print(f"installing {aid}")
         try:
-            result = installer.install_from_url(
-                url=url, addons_folder=folder, target_folder_name=addon.folder
-            )
+            pipeline.install_addon(addon=addon, addons_folder=folder, gh_client=gh)
         except installer.InstallError as exc:
             print(f"error installing {aid}: {exc}", file=sys.stderr)
             return 2
-        sha = gh.branch_head_sha(addon.github, addon.branch)
-        manifest.record(
-            folder,
-            manifest.InstallEntry(
-                addon_id=aid,
-                folder=addon.folder,
-                source=f"github:{addon.github}",
-                ref=addon.branch,
-                sha=sha,
-                installed_at=dt.datetime.now(dt.UTC),
-                files=result.files,
-                size_bytes=result.size_bytes,
-            ),
-        )
     return 0
 
 
