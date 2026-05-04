@@ -979,6 +979,309 @@
       "author": "enn-wow-addons",
       "github": "enn-wow-addons/HunterSwissKnife",
       "folder": "HunterSwissKnife"
+    },
+    {
+      "id": "tmog",
+      "name": "Tmog",
+      "category": "ui",
+      "description": "Ultimate dressing room for Turtle WoW",
+      "author": "Otari98",
+      "github": "Otari98/Tmog",
+      "folder": "Tmog",
+      "tags": [
+        "turtle-only",
+        "popular"
+      ]
+    },
+    {
+      "id": "difficult-bulletin-board",
+      "name": "DifficultBulletinBoard",
+      "category": "social",
+      "description": "LFG Bulletin Board for Turtle WoW",
+      "author": "DeterminedPanda",
+      "github": "DeterminedPanda/DifficultBulletinBoard",
+      "folder": "DifficultBulletinBoard",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "quick-heal",
+      "name": "QuickHeal",
+      "category": "combat",
+      "description": "Smart healing addon for Turtle WoW",
+      "author": "Zebouski",
+      "github": "Zebouski/QuickHeal",
+      "branch": "main",
+      "folder": "QuickHeal",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "fanatiques-ui",
+      "name": "FanatiquesUI",
+      "category": "ui",
+      "description": "Turtle WoW UI pack",
+      "author": "Fanatiques",
+      "github": "Fanatiques/FanatiquesUI",
+      "branch": "main",
+      "folder": "FanatiquesUI",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "brainwasher-pro",
+      "name": "BrainwasherPro",
+      "category": "utility",
+      "description": "Modern Brainwasher interface (Turtle WoW)",
+      "author": "Cinecom",
+      "github": "Cinecom/BrainwasherPro",
+      "branch": "main",
+      "folder": "BrainwasherPro",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "rested",
+      "name": "Rested",
+      "category": "utility",
+      "description": "Rested XP tracker for Turtle WoW",
+      "author": "hazlema",
+      "github": "hazlema/Rested",
+      "folder": "Rested",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "rest-bar",
+      "name": "RestBar",
+      "category": "utility",
+      "description": "Rest bar addon (Turtle WoW)",
+      "author": "Steelbash",
+      "github": "Steelbash/RestBar",
+      "branch": "main",
+      "folder": "RestBar",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "iwin-button",
+      "name": "IWINButton",
+      "category": "utility",
+      "description": "I-WIN button (Turtle WoW novelty)",
+      "author": "Steelbash",
+      "github": "Steelbash/IWINButton",
+      "branch": "main",
+      "folder": "IWINButton",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "zorlen",
+      "name": "Zorlen",
+      "category": "combat",
+      "description": "Zorlen functions library + Turtle WoW custom spells",
+      "author": "Xian55",
+      "github": "Xian55/Zorlen",
+      "branch": "main",
+      "folder": "Zorlen",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "proc-doc",
+      "name": "ProcDoc",
+      "category": "combat",
+      "description": "Proc tracker for Turtle WoW",
+      "author": "thezephyrsong",
+      "github": "thezephyrsong/ProcDoc",
+      "branch": "main",
+      "folder": "ProcDoc",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "autobar-turtle",
+      "name": "AutoBar (Turtle)",
+      "category": "ui",
+      "description": "AutoBar updated for Turtle WoW",
+      "author": "ahhh-reptar",
+      "github": "ahhh-reptar/AutoBar-for-Turtle-WoW",
+      "branch": "main",
+      "folder": "AutoBar",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "necrosis",
+      "name": "Necrosis",
+      "category": "combat",
+      "description": "Warlock companion (Turtle WoW fork)",
+      "author": "BlackHobbiT",
+      "github": "BlackHobbiT/necrosis-twow",
+      "branch": "main",
+      "folder": "Necrosis",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "antispam",
+      "name": "AntiSpam",
+      "category": "social",
+      "description": "Low-effort spam blocker for Turtle WoW",
+      "author": "shagu",
+      "github": "shagu/antispam",
+      "folder": "antispam",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "shagu-boat",
+      "name": "ShaguBoat",
+      "category": "utility",
+      "description": "Despawn timer for Turtle WoW fishing boats",
+      "author": "shagu",
+      "github": "shagu/ShaguBoat",
+      "folder": "ShaguBoat",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "distance-display",
+      "name": "DistanceDisplay",
+      "category": "combat",
+      "description": "Visual indicator for distance and LoS (Turtle WoW)",
+      "author": "uc9089",
+      "github": "uc9089/DistanceDisplay",
+      "branch": "main",
+      "folder": "DistanceDisplay",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "ez-poison",
+      "name": "EzPoison",
+      "category": "combat",
+      "description": "Rogue poison helper for Turtle WoW",
+      "author": "wierdthing",
+      "github": "wierdthing/EzPoison",
+      "branch": "main",
+      "folder": "EzPoison",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "theorycraft-turtle",
+      "name": "TheoryCraft (Turtle)",
+      "category": "utility",
+      "description": "TheoryCraft 1.12 updated for Turtle WoW",
+      "author": "Zebouski",
+      "github": "Zebouski/TheoryCraft-Turtle",
+      "folder": "TheoryCraft",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "gatherer-turtle",
+      "name": "Gatherer (Turtle)",
+      "category": "quest",
+      "description": "Resource node tracker for Turtle WoW",
+      "author": "dps999",
+      "github": "dps999/Gatherer-for-Turtle-WOW",
+      "branch": "main",
+      "folder": "Gatherer",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "gamepad",
+      "name": "Gamepad",
+      "category": "ui",
+      "description": "Gamepad/controller support for Vanilla",
+      "author": "yutsuku",
+      "github": "yutsuku/Gamepad",
+      "folder": "Gamepad"
+    },
+    {
+      "id": "better-babelfish",
+      "name": "BetterBabelFish",
+      "category": "utility",
+      "description": "Translation tool for Vanilla",
+      "author": "yutsuku",
+      "github": "yutsuku/BetterBabelFish",
+      "folder": "BetterBabelFish"
+    },
+    {
+      "id": "stealth-overlay",
+      "name": "StealthOverlay",
+      "category": "combat",
+      "description": "Stealth overlay for rogues/druids",
+      "author": "yutsuku",
+      "github": "yutsuku/StealthOverlay",
+      "folder": "StealthOverlay"
+    },
+    {
+      "id": "klh-threat-meter",
+      "name": "KLH Threat Meter (Blizz)",
+      "category": "combat",
+      "description": "Player threat meter for Vanilla 1.12",
+      "author": "yutsuku",
+      "github": "yutsuku/KLHThreatMeterBlizz",
+      "folder": "KLHThreatMeterBlizz"
+    },
+    {
+      "id": "ui-tweaks",
+      "name": "UITweaks",
+      "category": "ui",
+      "description": "Misc UI tweaks for Vanilla",
+      "author": "yutsuku",
+      "github": "yutsuku/UITweaks",
+      "folder": "UITweaks"
+    },
+    {
+      "id": "buy-poisons",
+      "name": "BuyPoisons",
+      "category": "utility",
+      "description": "Auto-buy poisons (rogue helper)",
+      "author": "yutsuku",
+      "github": "yutsuku/BuyPoisons",
+      "folder": "BuyPoisons"
+    },
+    {
+      "id": "fast-tot",
+      "name": "FastTOT",
+      "category": "combat",
+      "description": "Improves Target of Target performance",
+      "author": "OldManAlpha",
+      "github": "OldManAlpha/FastTOT",
+      "branch": "main",
+      "folder": "FastTOT"
+    },
+    {
+      "id": "unitxp-sp3-addon",
+      "name": "UnitXP SP3 Addon",
+      "category": "utility",
+      "description": "Lua companion for UnitXP SP3 client mod",
+      "author": "OldManAlpha",
+      "github": "OldManAlpha/UnitXP_SP3_Addon",
+      "branch": "latest",
+      "folder": "UnitXP_SP3_Addon"
     }
   ],
   "client_mods": [
@@ -1100,7 +1403,9 @@
         "cdframes",
         "diminish",
         "interruptor",
-        "trinket-menu"
+        "trinket-menu",
+        "quick-heal",
+        "klh-threat-meter"
       ],
       "client_mods": [
         "vanillafixes",
@@ -1114,7 +1419,10 @@
         "pfquest-turtle",
         "friend-o-tron",
         "color-social-frame",
-        "wim"
+        "wim",
+        "auld-lang-syne",
+        "rested",
+        "klh-threat-meter"
       ],
       "client_mods": [
         "vanillafixes"
