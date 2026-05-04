@@ -4,6 +4,28 @@ All notable changes to **EZWowAddon** will be documented in this file.
 
 ---
 
+## [v2.1.0] – 2026-05-03
+
+### Added
+
+- Catalog grew to **123 verified addons** (was 97 in v2.0.2). 26 more clusters surfaced via deeper research.
+  - Turtle-WoW-specific: Tmog, DifficultBulletinBoard, QuickHeal, FanatiquesUI, BrainwasherPro, Rested, RestBar, IWINButton, Zorlen, ProcDoc (turtle), AutoBar (turtle), Necrosis (turtle), AntiSpam, ShaguBoat, DistanceDisplay, EzPoison, TheoryCraft (turtle), Gatherer (turtle).
+  - yutsuku Vanilla cluster: Gamepad, BetterBabelFish, StealthOverlay, KLHThreatMeterBlizz, UITweaks, BuyPoisons.
+  - OldManAlpha: FastTOT, UnitXP_SP3_Addon (companion to client mod).
+- New `ezwow.core.pipeline` module: single `install_addon()` and `update_addon_to_sha()` entry points used by CLI + UI tabs.
+
+### Changed
+
+- **Refactor:** install pipeline deduplicated. CLI, Browse tab, and Updates tab no longer each rebuild the install dance — they call `pipeline.install_addon()` / `pipeline.update_addon_to_sha()`. ~80 LOC of duplication removed.
+- Hardcore preset upgraded with real addons: friend-o-tron, color-social-frame, wim, auld-lang-syne, rested, klh-threat-meter.
+- Raider preset adds quick-heal + klh-threat-meter.
+
+### Coverage
+
+- `ezwow.core` coverage now 91% (up from 90%); new `pipeline.py` 100% covered.
+
+---
+
 ## [v2.0.2] – 2026-05-03
 
 ### Added
