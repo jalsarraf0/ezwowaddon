@@ -4,6 +4,26 @@ All notable changes to **EZWowAddon** will be documented in this file.
 
 ---
 
+## [v2.0.1] – 2026-05-03
+
+### Fixed
+
+- **Catalog rescue**: 31 of 40 addon URLs in v2.0.0 returned 404. Rebuilt the catalog from scratch with canonical repos verified via GitHub search. All entries HEAD-tested before ship.
+
+### Added
+
+- Catalog grew from 40 to 70 addons. Clusters added:
+  - shagu's full Vanilla suite (ShaguActions, ShaguJunk, ShaguBoP, ShaguMail, ShaguClock, ShaguValue, ShaguMount, ShaguTooltips, ShaguChat, ShaguCopy, ShaguQuest, ShaguInventory, ShaguController, ShaguWidget, pfQuest-icons, Clique, ShaguScan)
+  - shirsig's Vanilla cluster (Mail, WIM, ccwatch, SortBags, Cleanup, crafty, mouseover, retarget)
+  - CosminPOP Turtle WoW updates (Atlas, AtlasLoot, PallyPower, TWLC2, TWThreat)
+  - Road-block's Vanilla cluster (Cartographer, AttackBar, ClassicSnowFall, CustomNameplates, ColorSocialFrame, AutoProfit, CooldownTimers, SimpleRaidTargetIcons, ArchiTotem)
+  - refaim's addons (MobStats, TrainerSkills, TradeSkillsData-turtle)
+  - laytya's Vanilla cluster (ATSW, EQL3, Chronometer, Kui-Nameplates)
+  - Plus Puppeteer (OldManAlpha), pfExtend (Cliencer), RallyHelper, Vanilla-NewLevelFrame, Vanilla-Iconic
+- Presets updated to reference verified IDs.
+
+---
+
 ## [v2.0.0] – 2026-05-03
 
 ### Added
