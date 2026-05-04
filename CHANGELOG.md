@@ -4,6 +4,24 @@ All notable changes to **EZWowAddon** will be documented in this file.
 
 ---
 
+## [v2.0.2] – 2026-05-03
+
+### Added
+
+- 27 more verified addons. Catalog now 97 entries (was 70 in v2.0.1).
+- New finds across 6 author clusters:
+  - **wardz**: FocusFrame, FocusFrame TargetCastbar, Diminish, DispelBorder
+  - **shirsig**: cdframes, cooline, aux_merchant_prices, sentry, notoggle, linkmend
+  - **shagu**: ShaguScore, ShaguNotify
+  - **Road-block**: SimpleCombatLog, Possessions, TriviaBot, PingoMatic, Interruptor, AuldLangSyne, RogueFocus
+  - **cubenicke**: Fury (warrior), Mule
+  - **wow-vanilla-addons** org: QuestItem, Accountant
+  - Plus: Wiggen94/LootMonitor (Turtle-only), S4V4GENZ/TrinketMenu, mitjafelicijan/TurtleTweaks (Turtle-only), enn-wow-addons/HunterSwissKnife
+- Presets enhanced: Raider gets cdframes/diminish/interruptor/trinket-menu; Essential gets accountant/quest-item.
+- All 97/97 URLs HEAD-verified before ship.
+
+---
+
 ## [v2.0.1] – 2026-05-03
 
 ### Fixed

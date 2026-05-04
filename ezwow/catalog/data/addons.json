@@ -2,115 +2,1131 @@
   "schema_version": 2,
   "updated": "2026-05-03",
   "categories": [
-    {"id": "ui", "label": "UI / Interface"},
-    {"id": "quest", "label": "Quest & Map"},
-    {"id": "combat", "label": "Combat & Meters"},
-    {"id": "auction", "label": "Auction House"},
-    {"id": "inventory", "label": "Inventory & Mail"},
-    {"id": "raid", "label": "Raid & Dungeon"},
-    {"id": "social", "label": "Social"},
-    {"id": "utility", "label": "Utility / Quality of Life"},
-    {"id": "client-mod", "label": "Client Mod"}
+    {
+      "id": "ui",
+      "label": "UI / Interface"
+    },
+    {
+      "id": "quest",
+      "label": "Quest & Map"
+    },
+    {
+      "id": "combat",
+      "label": "Combat & Meters"
+    },
+    {
+      "id": "auction",
+      "label": "Auction House"
+    },
+    {
+      "id": "inventory",
+      "label": "Inventory & Mail"
+    },
+    {
+      "id": "raid",
+      "label": "Raid & Dungeon"
+    },
+    {
+      "id": "social",
+      "label": "Social"
+    },
+    {
+      "id": "utility",
+      "label": "Utility / Quality of Life"
+    },
+    {
+      "id": "client-mod",
+      "label": "Client Mod"
+    }
   ],
   "addons": [
-    {"id": "pfui", "name": "pfUI", "category": "ui", "description": "Full UI replacement for Vanilla & TBC", "author": "shagu", "github": "shagu/pfUI", "folder": "pfUI", "tags": ["popular"], "homepage": "https://shagu.org/pfUI"},
-    {"id": "shagu-tweaks", "name": "ShaguTweaks", "category": "ui", "description": "Quality-of-life tweaks for the default 1.12 UI", "author": "shagu", "github": "shagu/ShaguTweaks", "folder": "ShaguTweaks", "tags": ["essential"]},
-    {"id": "shagu-plates", "name": "ShaguPlates", "category": "ui", "description": "Standalone export of pfUI nameplates", "author": "shagu", "github": "shagu/ShaguPlates", "folder": "ShaguPlates"},
-    {"id": "newlevelframe", "name": "NewLevelFrame", "category": "ui", "description": "Cleaner level-up frame for Vanilla", "author": "alchem1ster", "github": "alchem1ster/Vanilla-NewLevelFrame", "branch": "main", "folder": "Vanilla-NewLevelFrame"},
-    {"id": "shagu-controller", "name": "ShaguController", "category": "ui", "description": "SteamDeck-optimized UI and keybinds", "author": "shagu", "github": "shagu/ShaguController", "folder": "ShaguController"},
-    {"id": "shagu-actions", "name": "ShaguActions", "category": "ui", "description": "Save/restore action bar setups per skill tree", "author": "shagu", "github": "shagu/ShaguActions", "folder": "ShaguActions"},
-    {"id": "shagu-widget", "name": "ShaguWidget", "category": "ui", "description": "Desktop widget system for Vanilla & TBC", "author": "shagu", "github": "shagu/ShaguWidget", "folder": "ShaguWidget"},
-    {"id": "puppeteer", "name": "Puppeteer", "category": "ui", "description": "Modern unit frames for Vanilla 1.12", "author": "OldManAlpha", "github": "OldManAlpha/Puppeteer", "branch": "main", "folder": "Puppeteer"},
-    {"id": "kui-nameplates", "name": "Kui Nameplates", "category": "ui", "description": "Port of Kui Nameplates to Vanilla", "author": "laytya", "github": "laytya/Kui-Namaplates", "branch": "main", "folder": "Kui_Nameplates"},
-    {"id": "custom-nameplates", "name": "CustomNameplates", "category": "ui", "description": "Vanilla nameplate addon (Bonho/Snelf/Lulleh)", "author": "Road-block", "github": "Road-block/CustomNameplates", "folder": "CustomNameplates"},
-    {"id": "pfquest", "name": "pfQuest", "category": "quest", "description": "Quest helper with in-game map markers", "author": "shagu", "github": "shagu/pfQuest", "folder": "pfQuest", "tags": ["essential"], "homepage": "https://shagu.org/pfQuest"},
-    {"id": "pfquest-turtle", "name": "pfQuest-Turtle", "category": "quest", "description": "Turtle WoW-specific quest data extension", "author": "shagu", "github": "shagu/pfQuest-turtle", "folder": "pfQuest-turtle", "depends": ["pfquest"], "tags": ["essential", "turtle-only"]},
-    {"id": "pfextend", "name": "pfExtend", "category": "quest", "description": "Loot display + quest chain browser for pfQuest", "author": "Cliencer", "github": "Cliencer/pfExtend", "branch": "main", "folder": "pfExtend", "depends": ["pfquest"]},
-    {"id": "pfquest-icons", "name": "pfQuest-icons", "category": "quest", "description": "Gatherer-style resource node icons for pfQuest", "author": "shagu", "github": "shagu/pfQuest-icons", "folder": "pfQuest-icons", "depends": ["pfquest"]},
-    {"id": "shagu-quest", "name": "ShaguQuest", "category": "quest", "description": "Standalone in-game quest database", "author": "shagu", "github": "shagu/ShaguQuest", "folder": "ShaguQuest"},
-    {"id": "cartographer", "name": "Cartographer", "category": "quest", "description": "Enhanced map addon for Vanilla", "author": "Road-block", "github": "Road-block/Cartographer", "folder": "Cartographer"},
-    {"id": "eql3", "name": "Extended Quest Log 3", "category": "quest", "description": "Better quest log frame", "author": "laytya", "github": "laytya/EQL3", "folder": "EQL3"},
-    {"id": "chronometer", "name": "Chronometer", "category": "quest", "description": "Cooldown / timer tracker", "author": "laytya", "github": "laytya/Chronometer-vanilla", "folder": "Chronometer"},
-    {"id": "bigwigs", "name": "BigWigs", "category": "combat", "description": "Boss warnings and ability timers (Turtle update)", "author": "CosminPOP", "github": "CosminPOP/BigWigs", "folder": "BigWigs", "tags": ["raider"]},
-    {"id": "shagudps", "name": "ShaguDPS", "category": "combat", "description": "Lightweight damage meter", "author": "shagu", "github": "shagu/ShaguDPS", "folder": "ShaguDPS"},
-    {"id": "dpsmate", "name": "DPSMate (vanilla+)", "category": "combat", "description": "Comprehensive damage tracking, modified port", "author": "TerraBaddie", "github": "TerraBaddie/DPSMate-vanillaplus", "branch": "main", "folder": "DPSMate"},
-    {"id": "tww-threat", "name": "TWThreat", "category": "combat", "description": "Turtle WoW threat meter", "author": "CosminPOP", "github": "CosminPOP/TWThreat", "folder": "TWThreat"},
-    {"id": "attack-bar", "name": "AttackBar", "category": "combat", "description": "Player + enemy swing-timer bar", "author": "Road-block", "github": "Road-block/AttackBar", "folder": "AttackBar"},
-    {"id": "classic-snowfall", "name": "Classic SnowFall", "category": "combat", "description": "Cast abilities on key-down for faster response", "author": "Road-block", "github": "Road-block/ClassicSnowFall", "folder": "ClassicSnowFall"},
-    {"id": "shagu-scan", "name": "ShaguScan", "category": "combat", "description": "Unit scanner using SuperWoW API", "author": "shagu", "github": "shagu/ShaguScan", "folder": "ShaguScan"},
-    {"id": "ccwatch", "name": "CCWatch", "category": "combat", "description": "Crowd control + diminishing returns timers", "author": "shirsig", "github": "shirsig/ccwatch", "folder": "ccwatch"},
-    {"id": "aux", "name": "Aux", "category": "auction", "description": "Powerful auction house revamp (Vanilla port)", "author": "shirsig", "github": "shirsig/aux-addon-vanilla", "folder": "aux-addon", "tags": ["essential"]},
-    {"id": "auctionator", "name": "Auctionator", "category": "auction", "description": "Simplified auction house UI", "author": "nimeral", "github": "nimeral/AuctionatorVanilla", "folder": "Auctionator"},
-    {"id": "atsw", "name": "Advanced TradeSkill Window", "category": "auction", "description": "Replacement tradeskill window with filters", "author": "laytya", "github": "laytya/AdvancedTradeSkillWindow-vanilla", "folder": "ATSW"},
-    {"id": "bagshui", "name": "Bagshui", "category": "inventory", "description": "Auto-categorising bags with custom rules", "author": "absir", "github": "absir/Bagshui", "branch": "main", "folder": "Bagshui"},
-    {"id": "sortbags", "name": "SortBags", "category": "inventory", "description": "Bag sorting for Vanilla 1.12", "author": "shirsig", "github": "shirsig/SortBags-vanilla", "folder": "SortBags"},
-    {"id": "cleanup", "name": "Cleanup", "category": "inventory", "description": "Bag-sorting buttons (requires SortBags)", "author": "shirsig", "github": "shirsig/Cleanup-vanilla", "folder": "Cleanup", "depends": ["sortbags"]},
-    {"id": "shagu-inventory", "name": "ShaguInventory", "category": "inventory", "description": "Show item count in tooltips", "author": "shagu", "github": "shagu/ShaguInventory", "folder": "ShaguInventory"},
-    {"id": "shagu-junk", "name": "ShaguJunk", "category": "inventory", "description": "Auto-sell and delete specified items", "author": "shagu", "github": "shagu/ShaguJunk", "folder": "ShaguJunk"},
-    {"id": "shagu-bop", "name": "ShaguBoP", "category": "inventory", "description": "Auto-accept BoP loot when alone", "author": "shagu", "github": "shagu/ShaguBoP", "folder": "ShaguBoP"},
-    {"id": "mail", "name": "Mail", "category": "inventory", "description": "Multi-message mail enhancement", "author": "shirsig", "github": "shirsig/Mail", "folder": "Mail"},
-    {"id": "crafty", "name": "Crafty", "category": "inventory", "description": "Tradeskill window filter", "author": "shirsig", "github": "shirsig/crafty", "folder": "crafty"},
-    {"id": "atlas-turtle", "name": "Atlas (Turtle)", "category": "raid", "description": "Dungeon layout maps, Turtle WoW edition", "author": "CosminPOP", "github": "CosminPOP/Atlas", "folder": "Atlas", "tags": ["turtle-only"]},
-    {"id": "atlas-loot-turtle", "name": "AtlasLoot (Turtle)", "category": "raid", "description": "Boss loot database, Turtle WoW edition", "author": "CosminPOP", "github": "CosminPOP/AtlasLoot", "folder": "AtlasLoot", "tags": ["turtle-only"]},
-    {"id": "pally-power", "name": "PallyPower", "category": "raid", "description": "Paladin buff assignment (Shaman supported)", "author": "CosminPOP", "github": "CosminPOP/PallyPower", "folder": "PallyPower"},
-    {"id": "twlc2", "name": "TWLC2", "category": "raid", "description": "Loot council helper for Turtle WoW BWL", "author": "CosminPOP", "github": "CosminPOP/TWLC2", "folder": "TWLC2"},
-    {"id": "archi-totem", "name": "ArchiTotem", "category": "raid", "description": "Totem bar and timers for Shaman", "author": "Road-block", "github": "Road-block/ArchiTotem", "folder": "ArchiTotem"},
-    {"id": "friend-o-tron", "name": "Friend-O-Tron", "category": "social", "description": "Sync friends list across alts", "author": "refaim", "github": "refaim/Friend-O-Tron", "folder": "Friend-O-Tron"},
-    {"id": "wim", "name": "WIM", "category": "social", "description": "Whispers in instant-message style windows", "author": "shirsig", "github": "shirsig/WIM", "folder": "WIM"},
-    {"id": "shagu-chat", "name": "ShaguChat", "category": "social", "description": "Highlight custom chat messages", "author": "shagu", "github": "shagu/ShaguChat", "folder": "ShaguChat"},
-    {"id": "shagu-copy", "name": "ShaguCopy", "category": "social", "description": "Copy chat messages to clipboard", "author": "shagu", "github": "shagu/ShaguCopy", "folder": "ShaguCopy"},
-    {"id": "color-social-frame", "name": "ColorSocialFrame", "category": "social", "description": "Class-color friends, guild and Who list", "author": "Road-block", "github": "Road-block/ColorSocialFrame", "folder": "ColorSocialFrame"},
-    {"id": "bettercharacterstats", "name": "BetterCharacterStats", "category": "utility", "description": "Enhanced character pane statistics", "author": "yutsuku", "github": "yutsuku/BetterCharacterStats", "folder": "BetterCharacterStats", "tags": ["popular"]},
-    {"id": "missing-crafts", "name": "MissingCrafts", "category": "utility", "description": "Show missing crafts and how to obtain them", "author": "refaim", "github": "refaim/MissingCrafts", "folder": "MissingCrafts"},
-    {"id": "master-trade-skills", "name": "MasterTradeSkills", "category": "utility", "description": "Trade-skill info in tooltips for ingredients", "author": "refaim", "github": "refaim/MasterTradeSkills", "folder": "MasterTradeSkills"},
-    {"id": "item-tooltip-icons", "name": "ItemTooltipIcons", "category": "utility", "description": "Profession icons on crafting ingredient tooltips", "author": "refaim", "github": "refaim/ItemTooltipIcons", "folder": "ItemTooltipIcons"},
-    {"id": "pet-xp-bar", "name": "PetXPBar", "category": "utility", "description": "Hunter pet experience bar in default UI", "author": "refaim", "github": "refaim/PetXPBar", "folder": "PetXPBar"},
-    {"id": "mob-stats", "name": "MobStats", "category": "utility", "description": "Show mob stats in tooltips", "author": "refaim", "github": "refaim/MobStats", "folder": "MobStats"},
-    {"id": "trainer-skills", "name": "TrainerSkills", "category": "utility", "description": "Show class/profession trainer frame from anywhere", "author": "refaim", "github": "refaim/TrainerSkills", "folder": "TrainerSkills"},
-    {"id": "trade-skills-data-turtle", "name": "TradeSkillsData (Turtle)", "category": "utility", "description": "Turtle-specific trade-skill recipe + vendor DB", "author": "refaim", "github": "refaim/TradeSkillsData-turtle", "folder": "TradeSkillsData-turtle", "tags": ["turtle-only"]},
-    {"id": "voiceover", "name": "VoiceOver", "category": "utility", "description": "AI voice-acted quest text", "author": "mrthinger", "github": "mrthinger/wow-voiceover", "folder": "AI_VoiceOver"},
-    {"id": "pizza-world-buffs", "name": "PizzaWorldBuffs", "category": "utility", "description": "Track world-buff timers", "author": "acid9000", "github": "acid9000/PizzaWorldBuffs", "branch": "main", "folder": "PizzaWorldBuffs"},
-    {"id": "minimap-button-bag", "name": "Minimap Button Bag", "category": "utility", "description": "Consolidate addon minimap buttons", "author": "laytya", "github": "laytya/MinimapButtonBag-vanilla", "folder": "MinimapButtonBag"},
-    {"id": "shagu-clock", "name": "ShaguClock", "category": "utility", "description": "Movable clock", "author": "shagu", "github": "shagu/ShaguClock", "folder": "ShaguClock"},
-    {"id": "shagu-value", "name": "ShaguValue", "category": "utility", "description": "Item sell/buy value in tooltips", "author": "shagu", "github": "shagu/ShaguValue", "folder": "ShaguValue"},
-    {"id": "shagu-mount", "name": "ShaguMount", "category": "utility", "description": "Auto-unmount on action use", "author": "shagu", "github": "shagu/ShaguMount", "folder": "ShaguMount"},
-    {"id": "shagu-tooltips", "name": "ShaguTooltips", "category": "utility", "description": "Modify the game tooltips", "author": "shagu", "github": "shagu/ShaguTooltips", "folder": "ShaguTooltips"},
-    {"id": "clique", "name": "Clique", "category": "utility", "description": "Click-casting interface", "author": "shagu", "github": "shagu/Clique", "folder": "Clique"},
-    {"id": "auto-profit", "name": "AutoProfit", "category": "utility", "description": "Easy sell trash to vendor", "author": "Road-block", "github": "Road-block/AutoProfit", "folder": "AutoProfit"},
-    {"id": "cooldown-timers", "name": "CooldownTimers", "category": "utility", "description": "Cooldown timer bars", "author": "Road-block", "github": "Road-block/CooldownTimers", "folder": "CooldownTimers"},
-    {"id": "simple-raid-target-icons", "name": "SimpleRaidTargetIcons", "category": "utility", "description": "Target marking improvements", "author": "Road-block", "github": "Road-block/SimpleRaidTargetIcons", "folder": "SimpleRaidTargetIcons"},
-    {"id": "rally-helper", "name": "RallyHelper", "category": "utility", "description": "Turtle WoW world-buff timer (Ony/Nef/ZG/DMF)", "author": "Weirdpuppy94", "github": "Weirdpuppy94/RallyHelper", "branch": "main", "folder": "RallyHelper", "tags": ["turtle-only"]},
-    {"id": "vanilla-iconic", "name": "Vanilla-Iconic", "category": "utility", "description": "Macro icon search bar", "author": "alchem1ster", "github": "alchem1ster/Vanilla-Iconic", "branch": "main", "folder": "Vanilla-Iconic"},
-    {"id": "mouseover", "name": "Mouseover", "category": "utility", "description": "Mouseover actions on unit frames", "author": "shirsig", "github": "shirsig/mouseover", "folder": "!mouseover"},
-    {"id": "retarget", "name": "Retarget", "category": "utility", "description": "Auto-retarget after Feign Death and unit despawn", "author": "shirsig", "github": "shirsig/retarget", "folder": "retarget"}
+    {
+      "id": "pfui",
+      "name": "pfUI",
+      "category": "ui",
+      "description": "Full UI replacement for Vanilla & TBC",
+      "author": "shagu",
+      "github": "shagu/pfUI",
+      "folder": "pfUI",
+      "tags": [
+        "popular"
+      ],
+      "homepage": "https://shagu.org/pfUI"
+    },
+    {
+      "id": "shagu-tweaks",
+      "name": "ShaguTweaks",
+      "category": "ui",
+      "description": "Quality-of-life tweaks for the default 1.12 UI",
+      "author": "shagu",
+      "github": "shagu/ShaguTweaks",
+      "folder": "ShaguTweaks",
+      "tags": [
+        "essential"
+      ]
+    },
+    {
+      "id": "shagu-plates",
+      "name": "ShaguPlates",
+      "category": "ui",
+      "description": "Standalone export of pfUI nameplates",
+      "author": "shagu",
+      "github": "shagu/ShaguPlates",
+      "folder": "ShaguPlates"
+    },
+    {
+      "id": "newlevelframe",
+      "name": "NewLevelFrame",
+      "category": "ui",
+      "description": "Cleaner level-up frame for Vanilla",
+      "author": "alchem1ster",
+      "github": "alchem1ster/Vanilla-NewLevelFrame",
+      "branch": "main",
+      "folder": "Vanilla-NewLevelFrame"
+    },
+    {
+      "id": "shagu-controller",
+      "name": "ShaguController",
+      "category": "ui",
+      "description": "SteamDeck-optimized UI and keybinds",
+      "author": "shagu",
+      "github": "shagu/ShaguController",
+      "folder": "ShaguController"
+    },
+    {
+      "id": "shagu-actions",
+      "name": "ShaguActions",
+      "category": "ui",
+      "description": "Save/restore action bar setups per skill tree",
+      "author": "shagu",
+      "github": "shagu/ShaguActions",
+      "folder": "ShaguActions"
+    },
+    {
+      "id": "shagu-widget",
+      "name": "ShaguWidget",
+      "category": "ui",
+      "description": "Desktop widget system for Vanilla & TBC",
+      "author": "shagu",
+      "github": "shagu/ShaguWidget",
+      "folder": "ShaguWidget"
+    },
+    {
+      "id": "puppeteer",
+      "name": "Puppeteer",
+      "category": "ui",
+      "description": "Modern unit frames for Vanilla 1.12",
+      "author": "OldManAlpha",
+      "github": "OldManAlpha/Puppeteer",
+      "branch": "main",
+      "folder": "Puppeteer"
+    },
+    {
+      "id": "kui-nameplates",
+      "name": "Kui Nameplates",
+      "category": "ui",
+      "description": "Port of Kui Nameplates to Vanilla",
+      "author": "laytya",
+      "github": "laytya/Kui-Namaplates",
+      "branch": "main",
+      "folder": "Kui_Nameplates"
+    },
+    {
+      "id": "custom-nameplates",
+      "name": "CustomNameplates",
+      "category": "ui",
+      "description": "Vanilla nameplate addon (Bonho/Snelf/Lulleh)",
+      "author": "Road-block",
+      "github": "Road-block/CustomNameplates",
+      "folder": "CustomNameplates"
+    },
+    {
+      "id": "pfquest",
+      "name": "pfQuest",
+      "category": "quest",
+      "description": "Quest helper with in-game map markers",
+      "author": "shagu",
+      "github": "shagu/pfQuest",
+      "folder": "pfQuest",
+      "tags": [
+        "essential"
+      ],
+      "homepage": "https://shagu.org/pfQuest"
+    },
+    {
+      "id": "pfquest-turtle",
+      "name": "pfQuest-Turtle",
+      "category": "quest",
+      "description": "Turtle WoW-specific quest data extension",
+      "author": "shagu",
+      "github": "shagu/pfQuest-turtle",
+      "folder": "pfQuest-turtle",
+      "depends": [
+        "pfquest"
+      ],
+      "tags": [
+        "essential",
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "pfextend",
+      "name": "pfExtend",
+      "category": "quest",
+      "description": "Loot display + quest chain browser for pfQuest",
+      "author": "Cliencer",
+      "github": "Cliencer/pfExtend",
+      "branch": "main",
+      "folder": "pfExtend",
+      "depends": [
+        "pfquest"
+      ]
+    },
+    {
+      "id": "pfquest-icons",
+      "name": "pfQuest-icons",
+      "category": "quest",
+      "description": "Gatherer-style resource node icons for pfQuest",
+      "author": "shagu",
+      "github": "shagu/pfQuest-icons",
+      "folder": "pfQuest-icons",
+      "depends": [
+        "pfquest"
+      ]
+    },
+    {
+      "id": "shagu-quest",
+      "name": "ShaguQuest",
+      "category": "quest",
+      "description": "Standalone in-game quest database",
+      "author": "shagu",
+      "github": "shagu/ShaguQuest",
+      "folder": "ShaguQuest"
+    },
+    {
+      "id": "cartographer",
+      "name": "Cartographer",
+      "category": "quest",
+      "description": "Enhanced map addon for Vanilla",
+      "author": "Road-block",
+      "github": "Road-block/Cartographer",
+      "folder": "Cartographer"
+    },
+    {
+      "id": "eql3",
+      "name": "Extended Quest Log 3",
+      "category": "quest",
+      "description": "Better quest log frame",
+      "author": "laytya",
+      "github": "laytya/EQL3",
+      "folder": "EQL3"
+    },
+    {
+      "id": "chronometer",
+      "name": "Chronometer",
+      "category": "quest",
+      "description": "Cooldown / timer tracker",
+      "author": "laytya",
+      "github": "laytya/Chronometer-vanilla",
+      "folder": "Chronometer"
+    },
+    {
+      "id": "bigwigs",
+      "name": "BigWigs",
+      "category": "combat",
+      "description": "Boss warnings and ability timers (Turtle update)",
+      "author": "CosminPOP",
+      "github": "CosminPOP/BigWigs",
+      "folder": "BigWigs",
+      "tags": [
+        "raider"
+      ]
+    },
+    {
+      "id": "shagudps",
+      "name": "ShaguDPS",
+      "category": "combat",
+      "description": "Lightweight damage meter",
+      "author": "shagu",
+      "github": "shagu/ShaguDPS",
+      "folder": "ShaguDPS"
+    },
+    {
+      "id": "dpsmate",
+      "name": "DPSMate (vanilla+)",
+      "category": "combat",
+      "description": "Comprehensive damage tracking, modified port",
+      "author": "TerraBaddie",
+      "github": "TerraBaddie/DPSMate-vanillaplus",
+      "branch": "main",
+      "folder": "DPSMate"
+    },
+    {
+      "id": "tww-threat",
+      "name": "TWThreat",
+      "category": "combat",
+      "description": "Turtle WoW threat meter",
+      "author": "CosminPOP",
+      "github": "CosminPOP/TWThreat",
+      "folder": "TWThreat"
+    },
+    {
+      "id": "attack-bar",
+      "name": "AttackBar",
+      "category": "combat",
+      "description": "Player + enemy swing-timer bar",
+      "author": "Road-block",
+      "github": "Road-block/AttackBar",
+      "folder": "AttackBar"
+    },
+    {
+      "id": "classic-snowfall",
+      "name": "Classic SnowFall",
+      "category": "combat",
+      "description": "Cast abilities on key-down for faster response",
+      "author": "Road-block",
+      "github": "Road-block/ClassicSnowFall",
+      "folder": "ClassicSnowFall"
+    },
+    {
+      "id": "shagu-scan",
+      "name": "ShaguScan",
+      "category": "combat",
+      "description": "Unit scanner using SuperWoW API",
+      "author": "shagu",
+      "github": "shagu/ShaguScan",
+      "folder": "ShaguScan"
+    },
+    {
+      "id": "ccwatch",
+      "name": "CCWatch",
+      "category": "combat",
+      "description": "Crowd control + diminishing returns timers",
+      "author": "shirsig",
+      "github": "shirsig/ccwatch",
+      "folder": "ccwatch"
+    },
+    {
+      "id": "aux",
+      "name": "Aux",
+      "category": "auction",
+      "description": "Powerful auction house revamp (Vanilla port)",
+      "author": "shirsig",
+      "github": "shirsig/aux-addon-vanilla",
+      "folder": "aux-addon",
+      "tags": [
+        "essential"
+      ]
+    },
+    {
+      "id": "auctionator",
+      "name": "Auctionator",
+      "category": "auction",
+      "description": "Simplified auction house UI",
+      "author": "nimeral",
+      "github": "nimeral/AuctionatorVanilla",
+      "folder": "Auctionator"
+    },
+    {
+      "id": "atsw",
+      "name": "Advanced TradeSkill Window",
+      "category": "auction",
+      "description": "Replacement tradeskill window with filters",
+      "author": "laytya",
+      "github": "laytya/AdvancedTradeSkillWindow-vanilla",
+      "folder": "ATSW"
+    },
+    {
+      "id": "bagshui",
+      "name": "Bagshui",
+      "category": "inventory",
+      "description": "Auto-categorising bags with custom rules",
+      "author": "absir",
+      "github": "absir/Bagshui",
+      "branch": "main",
+      "folder": "Bagshui"
+    },
+    {
+      "id": "sortbags",
+      "name": "SortBags",
+      "category": "inventory",
+      "description": "Bag sorting for Vanilla 1.12",
+      "author": "shirsig",
+      "github": "shirsig/SortBags-vanilla",
+      "folder": "SortBags"
+    },
+    {
+      "id": "cleanup",
+      "name": "Cleanup",
+      "category": "inventory",
+      "description": "Bag-sorting buttons (requires SortBags)",
+      "author": "shirsig",
+      "github": "shirsig/Cleanup-vanilla",
+      "folder": "Cleanup",
+      "depends": [
+        "sortbags"
+      ]
+    },
+    {
+      "id": "shagu-inventory",
+      "name": "ShaguInventory",
+      "category": "inventory",
+      "description": "Show item count in tooltips",
+      "author": "shagu",
+      "github": "shagu/ShaguInventory",
+      "folder": "ShaguInventory"
+    },
+    {
+      "id": "shagu-junk",
+      "name": "ShaguJunk",
+      "category": "inventory",
+      "description": "Auto-sell and delete specified items",
+      "author": "shagu",
+      "github": "shagu/ShaguJunk",
+      "folder": "ShaguJunk"
+    },
+    {
+      "id": "shagu-bop",
+      "name": "ShaguBoP",
+      "category": "inventory",
+      "description": "Auto-accept BoP loot when alone",
+      "author": "shagu",
+      "github": "shagu/ShaguBoP",
+      "folder": "ShaguBoP"
+    },
+    {
+      "id": "mail",
+      "name": "Mail",
+      "category": "inventory",
+      "description": "Multi-message mail enhancement",
+      "author": "shirsig",
+      "github": "shirsig/Mail",
+      "folder": "Mail"
+    },
+    {
+      "id": "crafty",
+      "name": "Crafty",
+      "category": "inventory",
+      "description": "Tradeskill window filter",
+      "author": "shirsig",
+      "github": "shirsig/crafty",
+      "folder": "crafty"
+    },
+    {
+      "id": "atlas-turtle",
+      "name": "Atlas (Turtle)",
+      "category": "raid",
+      "description": "Dungeon layout maps, Turtle WoW edition",
+      "author": "CosminPOP",
+      "github": "CosminPOP/Atlas",
+      "folder": "Atlas",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "atlas-loot-turtle",
+      "name": "AtlasLoot (Turtle)",
+      "category": "raid",
+      "description": "Boss loot database, Turtle WoW edition",
+      "author": "CosminPOP",
+      "github": "CosminPOP/AtlasLoot",
+      "folder": "AtlasLoot",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "pally-power",
+      "name": "PallyPower",
+      "category": "raid",
+      "description": "Paladin buff assignment (Shaman supported)",
+      "author": "CosminPOP",
+      "github": "CosminPOP/PallyPower",
+      "folder": "PallyPower"
+    },
+    {
+      "id": "twlc2",
+      "name": "TWLC2",
+      "category": "raid",
+      "description": "Loot council helper for Turtle WoW BWL",
+      "author": "CosminPOP",
+      "github": "CosminPOP/TWLC2",
+      "folder": "TWLC2"
+    },
+    {
+      "id": "archi-totem",
+      "name": "ArchiTotem",
+      "category": "raid",
+      "description": "Totem bar and timers for Shaman",
+      "author": "Road-block",
+      "github": "Road-block/ArchiTotem",
+      "folder": "ArchiTotem"
+    },
+    {
+      "id": "friend-o-tron",
+      "name": "Friend-O-Tron",
+      "category": "social",
+      "description": "Sync friends list across alts",
+      "author": "refaim",
+      "github": "refaim/Friend-O-Tron",
+      "folder": "Friend-O-Tron"
+    },
+    {
+      "id": "wim",
+      "name": "WIM",
+      "category": "social",
+      "description": "Whispers in instant-message style windows",
+      "author": "shirsig",
+      "github": "shirsig/WIM",
+      "folder": "WIM"
+    },
+    {
+      "id": "shagu-chat",
+      "name": "ShaguChat",
+      "category": "social",
+      "description": "Highlight custom chat messages",
+      "author": "shagu",
+      "github": "shagu/ShaguChat",
+      "folder": "ShaguChat"
+    },
+    {
+      "id": "shagu-copy",
+      "name": "ShaguCopy",
+      "category": "social",
+      "description": "Copy chat messages to clipboard",
+      "author": "shagu",
+      "github": "shagu/ShaguCopy",
+      "folder": "ShaguCopy"
+    },
+    {
+      "id": "color-social-frame",
+      "name": "ColorSocialFrame",
+      "category": "social",
+      "description": "Class-color friends, guild and Who list",
+      "author": "Road-block",
+      "github": "Road-block/ColorSocialFrame",
+      "folder": "ColorSocialFrame"
+    },
+    {
+      "id": "bettercharacterstats",
+      "name": "BetterCharacterStats",
+      "category": "utility",
+      "description": "Enhanced character pane statistics",
+      "author": "yutsuku",
+      "github": "yutsuku/BetterCharacterStats",
+      "folder": "BetterCharacterStats",
+      "tags": [
+        "popular"
+      ]
+    },
+    {
+      "id": "missing-crafts",
+      "name": "MissingCrafts",
+      "category": "utility",
+      "description": "Show missing crafts and how to obtain them",
+      "author": "refaim",
+      "github": "refaim/MissingCrafts",
+      "folder": "MissingCrafts"
+    },
+    {
+      "id": "master-trade-skills",
+      "name": "MasterTradeSkills",
+      "category": "utility",
+      "description": "Trade-skill info in tooltips for ingredients",
+      "author": "refaim",
+      "github": "refaim/MasterTradeSkills",
+      "folder": "MasterTradeSkills"
+    },
+    {
+      "id": "item-tooltip-icons",
+      "name": "ItemTooltipIcons",
+      "category": "utility",
+      "description": "Profession icons on crafting ingredient tooltips",
+      "author": "refaim",
+      "github": "refaim/ItemTooltipIcons",
+      "folder": "ItemTooltipIcons"
+    },
+    {
+      "id": "pet-xp-bar",
+      "name": "PetXPBar",
+      "category": "utility",
+      "description": "Hunter pet experience bar in default UI",
+      "author": "refaim",
+      "github": "refaim/PetXPBar",
+      "folder": "PetXPBar"
+    },
+    {
+      "id": "mob-stats",
+      "name": "MobStats",
+      "category": "utility",
+      "description": "Show mob stats in tooltips",
+      "author": "refaim",
+      "github": "refaim/MobStats",
+      "folder": "MobStats"
+    },
+    {
+      "id": "trainer-skills",
+      "name": "TrainerSkills",
+      "category": "utility",
+      "description": "Show class/profession trainer frame from anywhere",
+      "author": "refaim",
+      "github": "refaim/TrainerSkills",
+      "folder": "TrainerSkills"
+    },
+    {
+      "id": "trade-skills-data-turtle",
+      "name": "TradeSkillsData (Turtle)",
+      "category": "utility",
+      "description": "Turtle-specific trade-skill recipe + vendor DB",
+      "author": "refaim",
+      "github": "refaim/TradeSkillsData-turtle",
+      "folder": "TradeSkillsData-turtle",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "voiceover",
+      "name": "VoiceOver",
+      "category": "utility",
+      "description": "AI voice-acted quest text",
+      "author": "mrthinger",
+      "github": "mrthinger/wow-voiceover",
+      "folder": "AI_VoiceOver"
+    },
+    {
+      "id": "pizza-world-buffs",
+      "name": "PizzaWorldBuffs",
+      "category": "utility",
+      "description": "Track world-buff timers",
+      "author": "acid9000",
+      "github": "acid9000/PizzaWorldBuffs",
+      "branch": "main",
+      "folder": "PizzaWorldBuffs"
+    },
+    {
+      "id": "minimap-button-bag",
+      "name": "Minimap Button Bag",
+      "category": "utility",
+      "description": "Consolidate addon minimap buttons",
+      "author": "laytya",
+      "github": "laytya/MinimapButtonBag-vanilla",
+      "folder": "MinimapButtonBag"
+    },
+    {
+      "id": "shagu-clock",
+      "name": "ShaguClock",
+      "category": "utility",
+      "description": "Movable clock",
+      "author": "shagu",
+      "github": "shagu/ShaguClock",
+      "folder": "ShaguClock"
+    },
+    {
+      "id": "shagu-value",
+      "name": "ShaguValue",
+      "category": "utility",
+      "description": "Item sell/buy value in tooltips",
+      "author": "shagu",
+      "github": "shagu/ShaguValue",
+      "folder": "ShaguValue"
+    },
+    {
+      "id": "shagu-mount",
+      "name": "ShaguMount",
+      "category": "utility",
+      "description": "Auto-unmount on action use",
+      "author": "shagu",
+      "github": "shagu/ShaguMount",
+      "folder": "ShaguMount"
+    },
+    {
+      "id": "shagu-tooltips",
+      "name": "ShaguTooltips",
+      "category": "utility",
+      "description": "Modify the game tooltips",
+      "author": "shagu",
+      "github": "shagu/ShaguTooltips",
+      "folder": "ShaguTooltips"
+    },
+    {
+      "id": "clique",
+      "name": "Clique",
+      "category": "utility",
+      "description": "Click-casting interface",
+      "author": "shagu",
+      "github": "shagu/Clique",
+      "folder": "Clique"
+    },
+    {
+      "id": "auto-profit",
+      "name": "AutoProfit",
+      "category": "utility",
+      "description": "Easy sell trash to vendor",
+      "author": "Road-block",
+      "github": "Road-block/AutoProfit",
+      "folder": "AutoProfit"
+    },
+    {
+      "id": "cooldown-timers",
+      "name": "CooldownTimers",
+      "category": "utility",
+      "description": "Cooldown timer bars",
+      "author": "Road-block",
+      "github": "Road-block/CooldownTimers",
+      "folder": "CooldownTimers"
+    },
+    {
+      "id": "simple-raid-target-icons",
+      "name": "SimpleRaidTargetIcons",
+      "category": "utility",
+      "description": "Target marking improvements",
+      "author": "Road-block",
+      "github": "Road-block/SimpleRaidTargetIcons",
+      "folder": "SimpleRaidTargetIcons"
+    },
+    {
+      "id": "rally-helper",
+      "name": "RallyHelper",
+      "category": "utility",
+      "description": "Turtle WoW world-buff timer (Ony/Nef/ZG/DMF)",
+      "author": "Weirdpuppy94",
+      "github": "Weirdpuppy94/RallyHelper",
+      "branch": "main",
+      "folder": "RallyHelper",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "vanilla-iconic",
+      "name": "Vanilla-Iconic",
+      "category": "utility",
+      "description": "Macro icon search bar",
+      "author": "alchem1ster",
+      "github": "alchem1ster/Vanilla-Iconic",
+      "branch": "main",
+      "folder": "Vanilla-Iconic"
+    },
+    {
+      "id": "mouseover",
+      "name": "Mouseover",
+      "category": "utility",
+      "description": "Mouseover actions on unit frames",
+      "author": "shirsig",
+      "github": "shirsig/mouseover",
+      "folder": "!mouseover"
+    },
+    {
+      "id": "retarget",
+      "name": "Retarget",
+      "category": "utility",
+      "description": "Auto-retarget after Feign Death and unit despawn",
+      "author": "shirsig",
+      "github": "shirsig/retarget",
+      "folder": "retarget"
+    },
+    {
+      "id": "focus-frame",
+      "name": "FocusFrame",
+      "category": "ui",
+      "description": "Focus frame for Vanilla",
+      "author": "wardz",
+      "github": "wardz/FocusFrame",
+      "folder": "FocusFrame"
+    },
+    {
+      "id": "focus-frame-target-castbar",
+      "name": "FocusFrame TargetCastbar",
+      "category": "combat",
+      "description": "Target castbar for Vanilla",
+      "author": "wardz",
+      "github": "wardz/FocusFrame_TargetCastbar",
+      "folder": "FocusFrame_TargetCastbar"
+    },
+    {
+      "id": "diminish",
+      "name": "Diminish",
+      "category": "combat",
+      "description": "Diminishing returns tracker for player CC",
+      "author": "wardz",
+      "github": "wardz/Diminish",
+      "folder": "Diminish"
+    },
+    {
+      "id": "dispel-border",
+      "name": "DispelBorder",
+      "category": "combat",
+      "description": "Glowing border around dispellable enemy buffs",
+      "author": "wardz",
+      "github": "wardz/DispelBorder",
+      "folder": "DispelBorder"
+    },
+    {
+      "id": "fury",
+      "name": "Fury",
+      "category": "combat",
+      "description": "One-button warrior priority rotation",
+      "author": "cubenicke",
+      "github": "cubenicke/Fury",
+      "folder": "Fury"
+    },
+    {
+      "id": "mule",
+      "name": "Mule",
+      "category": "utility",
+      "description": "Helper for mail, bank and vendor tasks",
+      "author": "cubenicke",
+      "github": "cubenicke/Mule",
+      "folder": "Mule"
+    },
+    {
+      "id": "quest-item",
+      "name": "QuestItem",
+      "category": "quest",
+      "description": "Tells you which quest each item belongs to",
+      "author": "wow-vanilla-addons",
+      "github": "wow-vanilla-addons/QuestItem",
+      "folder": "QuestItem"
+    },
+    {
+      "id": "accountant",
+      "name": "Accountant",
+      "category": "utility",
+      "description": "Track incoming/outgoing cash per character",
+      "author": "wow-vanilla-addons",
+      "github": "wow-vanilla-addons/Accountant",
+      "folder": "Accountant"
+    },
+    {
+      "id": "loot-monitor",
+      "name": "LootMonitor",
+      "category": "utility",
+      "description": "Sleek loot notifications with item icons",
+      "author": "Wiggen94",
+      "github": "Wiggen94/LootMonitor",
+      "branch": "main",
+      "folder": "LootMonitor",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "trinket-menu",
+      "name": "TrinketMenu",
+      "category": "combat",
+      "description": "On-screen trinket use menu",
+      "author": "S4V4GENZ",
+      "github": "S4V4GENZ/TrinketMenu",
+      "folder": "TrinketMenu"
+    },
+    {
+      "id": "cdframes",
+      "name": "cdframes",
+      "category": "combat",
+      "description": "Cooldown timers for player/target/targettarget",
+      "author": "shirsig",
+      "github": "shirsig/cdframes",
+      "folder": "cdframes"
+    },
+    {
+      "id": "cooline",
+      "name": "Cooline",
+      "category": "combat",
+      "description": "Coolline-clone cooldown tracker for 1.12",
+      "author": "shirsig",
+      "github": "shirsig/cooline",
+      "folder": "cooline"
+    },
+    {
+      "id": "aux-merchant-prices",
+      "name": "Aux Merchant Prices",
+      "category": "auction",
+      "description": "Vendor price overlays in Aux",
+      "author": "shirsig",
+      "github": "shirsig/aux_merchant_prices",
+      "folder": "aux_merchant_prices",
+      "depends": [
+        "aux"
+      ]
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry",
+      "category": "combat",
+      "description": "Enemy alert",
+      "author": "shirsig",
+      "github": "shirsig/sentry",
+      "folder": "sentry"
+    },
+    {
+      "id": "notoggle",
+      "name": "NoToggle",
+      "category": "utility",
+      "description": "Disable toggling of Attack, Auto Shot and Shoot",
+      "author": "shirsig",
+      "github": "shirsig/notoggle",
+      "folder": "!notoggle"
+    },
+    {
+      "id": "linkmend",
+      "name": "LinkMend",
+      "category": "utility",
+      "description": "Convert and localise CLINK chat links",
+      "author": "shirsig",
+      "github": "shirsig/linkmend",
+      "folder": "linkmend"
+    },
+    {
+      "id": "shagu-score",
+      "name": "ShaguScore",
+      "category": "utility",
+      "description": "GearScore-style item rating display",
+      "author": "shagu",
+      "github": "shagu/ShaguScore",
+      "folder": "ShaguScore"
+    },
+    {
+      "id": "shagu-notify",
+      "name": "ShaguNotify",
+      "category": "utility",
+      "description": "Achievement-style notifications for events",
+      "author": "shagu",
+      "github": "shagu/ShaguNotify",
+      "folder": "ShaguNotify"
+    },
+    {
+      "id": "simple-combat-log",
+      "name": "SimpleCombatLog",
+      "category": "combat",
+      "description": "Pretty-print combat log",
+      "author": "Road-block",
+      "github": "Road-block/SimpleCombatLog",
+      "folder": "SimpleCombatLog"
+    },
+    {
+      "id": "possessions",
+      "name": "Possessions",
+      "category": "inventory",
+      "description": "Inventory list with alt support",
+      "author": "Road-block",
+      "github": "Road-block/Possessions",
+      "folder": "Possessions"
+    },
+    {
+      "id": "trivia-bot",
+      "name": "TriviaBot",
+      "category": "utility",
+      "description": "Trivia bot for guild chat fun",
+      "author": "Road-block",
+      "github": "Road-block/TriviaBot",
+      "folder": "TriviaBot"
+    },
+    {
+      "id": "pingo-matic",
+      "name": "PingoMatic",
+      "category": "utility",
+      "description": "Minimap ping enhancements",
+      "author": "Road-block",
+      "github": "Road-block/PingoMatic",
+      "folder": "PingoMatic"
+    },
+    {
+      "id": "interruptor",
+      "name": "Interruptor",
+      "category": "combat",
+      "description": "Announce interrupt usage",
+      "author": "Road-block",
+      "github": "Road-block/Interruptor",
+      "folder": "Interruptor"
+    },
+    {
+      "id": "auld-lang-syne",
+      "name": "AuldLangSyne",
+      "category": "social",
+      "description": "Friend, ignore and guild notes",
+      "author": "Road-block",
+      "github": "Road-block/AuldLangSyne",
+      "folder": "AuldLangSyne"
+    },
+    {
+      "id": "rogue-focus",
+      "name": "RogueFocus",
+      "category": "combat",
+      "description": "Rogue focus / target helper",
+      "author": "Road-block",
+      "github": "Road-block/RogueFocus",
+      "folder": "RogueFocus"
+    },
+    {
+      "id": "turtle-tweaks",
+      "name": "TurtleTweaks",
+      "category": "utility",
+      "description": "Client tweaks and enhancements addon for 1.12",
+      "author": "mitjafelicijan",
+      "github": "mitjafelicijan/TurtleTweaks",
+      "folder": "TurtleTweaks",
+      "tags": [
+        "turtle-only"
+      ]
+    },
+    {
+      "id": "hunter-swiss-knife",
+      "name": "HunterSwissKnife",
+      "category": "combat",
+      "description": "Hunter Swiss-army-knife (discontinued, still works)",
+      "author": "enn-wow-addons",
+      "github": "enn-wow-addons/HunterSwissKnife",
+      "folder": "HunterSwissKnife"
+    }
   ],
   "client_mods": [
-    {"id": "vanillafixes", "name": "VanillaFixes", "description": "Stutter and animation fixes; optional Vulkan via DXVK", "github": "RetroCro/TurtleWoW-Mods", "branch": "main", "asset_pattern": "VanillaFixes*.zip", "install_to": "data_root", "files_to_install": ["VanillaFixes.exe", "*.dll"], "tags": ["essential", "performance"]},
-    {"id": "superwow", "name": "SuperWoW", "description": "Expands Lua API and macro length", "github": "RetroCro/TurtleWoW-Mods", "branch": "main", "asset_pattern": "SuperWoW*.zip", "install_to": "data_root", "files_to_install": ["SuperWoWPatch.dll", "*.exe"], "tags": ["essential"]},
-    {"id": "nampower", "name": "Nampower", "description": "Spell queueing and quickcasting", "github": "RetroCro/TurtleWoW-Mods", "branch": "main", "asset_pattern": "Nampower*.zip", "install_to": "data_root", "files_to_install": ["nampower.dll"]},
-    {"id": "unitxp-sp3", "name": "UnitXP SP3", "description": "Camera, nameplates, background notifications", "github": "RetroCro/TurtleWoW-Mods", "branch": "main", "asset_pattern": "UnitXP*.zip", "install_to": "data_root", "files_to_install": ["UnitXP.dll"]},
-    {"id": "vanillatweaks", "name": "VanillaTweaks", "description": "Widescreen FoV, farclip, right-click autoloot", "github": "RetroCro/TurtleWoW-Mods", "branch": "main", "asset_pattern": "VanillaTweaks*.zip", "install_to": "data_root", "files_to_install": ["VanillaTweaks.exe", "*.dll"]},
-    {"id": "perfboost", "name": "PerfBoost", "description": "Per-unit-type render-distance tuning", "github": "RetroCro/TurtleWoW-Mods", "branch": "main", "asset_pattern": "PerfBoost*.zip", "install_to": "data_root", "files_to_install": ["*.dll"]}
+    {
+      "id": "vanillafixes",
+      "name": "VanillaFixes",
+      "description": "Stutter and animation fixes; optional Vulkan via DXVK",
+      "github": "RetroCro/TurtleWoW-Mods",
+      "branch": "main",
+      "asset_pattern": "VanillaFixes*.zip",
+      "install_to": "data_root",
+      "files_to_install": [
+        "VanillaFixes.exe",
+        "*.dll"
+      ],
+      "tags": [
+        "essential",
+        "performance"
+      ]
+    },
+    {
+      "id": "superwow",
+      "name": "SuperWoW",
+      "description": "Expands Lua API and macro length",
+      "github": "RetroCro/TurtleWoW-Mods",
+      "branch": "main",
+      "asset_pattern": "SuperWoW*.zip",
+      "install_to": "data_root",
+      "files_to_install": [
+        "SuperWoWPatch.dll",
+        "*.exe"
+      ],
+      "tags": [
+        "essential"
+      ]
+    },
+    {
+      "id": "nampower",
+      "name": "Nampower",
+      "description": "Spell queueing and quickcasting",
+      "github": "RetroCro/TurtleWoW-Mods",
+      "branch": "main",
+      "asset_pattern": "Nampower*.zip",
+      "install_to": "data_root",
+      "files_to_install": [
+        "nampower.dll"
+      ]
+    },
+    {
+      "id": "unitxp-sp3",
+      "name": "UnitXP SP3",
+      "description": "Camera, nameplates, background notifications",
+      "github": "RetroCro/TurtleWoW-Mods",
+      "branch": "main",
+      "asset_pattern": "UnitXP*.zip",
+      "install_to": "data_root",
+      "files_to_install": [
+        "UnitXP.dll"
+      ]
+    },
+    {
+      "id": "vanillatweaks",
+      "name": "VanillaTweaks",
+      "description": "Widescreen FoV, farclip, right-click autoloot",
+      "github": "RetroCro/TurtleWoW-Mods",
+      "branch": "main",
+      "asset_pattern": "VanillaTweaks*.zip",
+      "install_to": "data_root",
+      "files_to_install": [
+        "VanillaTweaks.exe",
+        "*.dll"
+      ]
+    },
+    {
+      "id": "perfboost",
+      "name": "PerfBoost",
+      "description": "Per-unit-type render-distance tuning",
+      "github": "RetroCro/TurtleWoW-Mods",
+      "branch": "main",
+      "asset_pattern": "PerfBoost*.zip",
+      "install_to": "data_root",
+      "files_to_install": [
+        "*.dll"
+      ]
+    }
   ],
   "presets": {
     "essential": {
       "label": "Essential (new players)",
-      "addons": ["pfquest", "pfquest-turtle", "shagu-tweaks", "bagshui", "aux", "bettercharacterstats", "mail"],
-      "client_mods": ["vanillafixes"]
+      "addons": [
+        "pfquest",
+        "pfquest-turtle",
+        "shagu-tweaks",
+        "bagshui",
+        "aux",
+        "bettercharacterstats",
+        "mail",
+        "accountant",
+        "quest-item"
+      ],
+      "client_mods": [
+        "vanillafixes"
+      ]
     },
     "raider": {
       "label": "Raider",
-      "addons": ["pfquest", "pfquest-turtle", "bigwigs", "shagudps", "pfui", "bettercharacterstats", "atlas-turtle", "atlas-loot-turtle", "ccwatch", "tww-threat", "simple-raid-target-icons"],
-      "client_mods": ["vanillafixes", "superwow"]
+      "addons": [
+        "pfquest",
+        "pfquest-turtle",
+        "bigwigs",
+        "shagudps",
+        "pfui",
+        "bettercharacterstats",
+        "atlas-turtle",
+        "atlas-loot-turtle",
+        "ccwatch",
+        "tww-threat",
+        "simple-raid-target-icons",
+        "cdframes",
+        "diminish",
+        "interruptor",
+        "trinket-menu"
+      ],
+      "client_mods": [
+        "vanillafixes",
+        "superwow"
+      ]
     },
     "hardcore": {
       "label": "Hardcore",
-      "addons": ["pfquest", "pfquest-turtle", "friend-o-tron", "color-social-frame", "wim"],
-      "client_mods": ["vanillafixes"]
+      "addons": [
+        "pfquest",
+        "pfquest-turtle",
+        "friend-o-tron",
+        "color-social-frame",
+        "wim"
+      ],
+      "client_mods": [
+        "vanillafixes"
+      ]
     },
     "minimal-ui": {
       "label": "Minimal UI",
-      "addons": ["shagu-tweaks", "bagshui", "shagu-clock"],
+      "addons": [
+        "shagu-tweaks",
+        "bagshui",
+        "shagu-clock"
+      ],
       "client_mods": []
     }
   }

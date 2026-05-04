@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ezwowaddon"
-version = "2.0.1"
+version = "2.0.2"
 description = "World-class Turtle WoW addon and client-mod manager"
 readme = "README.md"
 requires-python = ">=3.12"
