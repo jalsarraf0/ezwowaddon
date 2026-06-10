@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   regression-and-security:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, python-slim]
     steps:
       - name: Checkout
         continue-on-error: true
