@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   regression-and-security:
-    runs-on: [self-hosted, python-slim]
+    runs-on: [self-hosted, dominus]
     steps:
       - name: Checkout
         continue-on-error: true

@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   test:
-    runs-on: [self-hosted, python-slim]
+    runs-on: [self-hosted, dominus]
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
